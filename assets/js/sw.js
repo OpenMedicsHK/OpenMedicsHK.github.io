@@ -38,7 +38,7 @@ self.addEventListener("activate", function(e){
             && cacheName != staticCacheName;
         }).map(function(cacheName){
           console.log("Deleting cache "+cacheName);
-          return cache.delete(cacheName);
+          return caches.delete(cacheName);
         })
       )
     })
