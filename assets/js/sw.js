@@ -2,7 +2,8 @@
 ---
 
 const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
-const staticCacheName = "openmedicshk::"+version;
+const prefix = "openmedicshk::";
+const staticCacheName = prefix+version;
 
 console.log("installing worker");
 
@@ -18,3 +19,28 @@ const filesToCache = [
     '{{ file.path }}',
   {% endfor %}
 ];
+
+
+self.addEventListener("install", function(e){
+  self.skipWaiting();
+  e.waitUntil(
+    caches.open(staticCacheName).then(function(cache){
+      return cache.addAll(filesToCache);
+    })
+  )
+});
+
+self.addEventListener("activate", function(e){
+  e.waitUntil(
+    caches.keys().then(function(cacheNames){
+      return Promise.all(
+        cacheNames.filter(function(cacheName){
+          return cacheName.startsWith(prefix)
+            && cacheName != staticCacheName;
+        }).map(function(cacheName){
+          return cache.delete(cacheName);
+        })
+      )
+    })
+  )
+});
