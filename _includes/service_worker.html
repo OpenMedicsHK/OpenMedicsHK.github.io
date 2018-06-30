@@ -4,7 +4,7 @@ function showOfflineToast() {
 
 // (1)
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("{{ "/assets/js/sw.js" | relative_url }}",
+  navigator.serviceWorker.register("{{ "/sw.js" | relative_url }}",
               {
                 scope: '{{ "/" | relative_url }}'
               }
