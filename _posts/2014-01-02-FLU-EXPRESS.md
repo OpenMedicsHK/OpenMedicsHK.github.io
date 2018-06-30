@@ -6,15 +6,11 @@ level: 第一級
 img: pic01.jpg
 tags: [公共衛生實況]
 ---
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/zh-hk.js"></script>
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
-
-
-
+<script src="{{ "/assets/js/chrono.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/sheetrock.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/moment.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/moment-zh-hk.js" | relative_url }}"></script>
+<script src="{{ "/assets/js/highstock.js" | relative_url }}"></script>
 
 ### 實驗室監測
 公共衞生化驗服務處所收集的呼吸道樣本中，季節性流感病毒陽性百分比。當中分別顯示季節性流感病毒的甲型(H1)、甲型(H3)、乙型及丙型流感株類。
