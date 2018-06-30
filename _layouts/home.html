@@ -11,7 +11,7 @@ layout: default
 
 <section class="tiles">
 	{% for post in site.posts %}
-	{% assign loopindex = forloop.index | modulo: 6 %}
+	{% assign loopindex = forloop.index | modulo: 6 | plus : 1 %}
 	<article class="style{{ loopindex }}">
 		<span class="image">
 			<img src="images/pic0{{ loopindex }}.jpg" alt="" />
