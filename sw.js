@@ -50,7 +50,7 @@ self.addEventListener("fetch", function(e){
   e.respondWith(
     caches.match(e.request).then(function(cacheResponse) {
       console.log("fetching "+e.request);
-      caches.open(staticCacheName).then(function(cache) {
+      return caches.open(staticCacheName).then(function(cache) {
         return fetch(e.request).then(function(response){
           cache.put(e.request.url, response.clone());
           return response;
