@@ -11,10 +11,10 @@ layout: default
 
 <section class="tiles">
 	{% for post in site.posts %}
-	{% assign loopindex = forloop.index | modulo: 6 %}
-	<article class="style{{ loopindex+1 }}">
+	{% assign loopindex = forloop.index | modulo: 6 | plus : 1 %}
+	<article class="style{{ loopindex }}">
 		<span class="image">
-			<img src="images/pic0{{ loopindex+1 }}.jpg" alt="" />
+			<img src="images/pic0{{ loopindex }}.jpg" alt="" />
 		</span>
 		<a href="{{ post.url | prepend: site.baseurl }}">
 			<h2>{{ post.title }}</h2>
