@@ -46,10 +46,7 @@ self.addEventListener("activate", function(e){
 });
 
 
-self.addEventListener("fetch", function(e){
-  e.respondWith(
-    caches.match(e.request).then(function(cacheResponse) {
-      console.log("fetching "+e.request);
+function onlineFirst(e, cacheResponse){  
       return caches.open(staticCacheName).then(function(cache) {
         return fetch(e.request).then(function(response){
           cache.put(e.request.url, response.clone());
@@ -60,6 +57,28 @@ self.addEventListener("fetch", function(e){
           }
         });
       });
+}
+
+function cacheFirst(e, cacheResponse){  
+  if (cacheResponse)
+    return cacheResponse;
+  else
+    return caches.open(staticCacheName).then(function(cache) {
+      return fetch(e.request).then(function(response){
+        cache.put(e.request.url, response.clone());
+        return response;
+      });
+    });
+}
+
+self.addEventListener("fetch", function(e){
+  e.respondWith(
+    caches.match(e.request).then(function(cacheResponse) {
+      console.log("fetching "+e.request);
+      if (filesToCache.indexOf(e.request.url) > -1)
+        return cacheFirst(e, cacheResponse);
+      else
+        return onlineFirst(e, cacheResponse);
      })
    )
 });
