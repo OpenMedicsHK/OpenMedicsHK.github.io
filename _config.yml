@@ -1,8 +1,8 @@
 # Site settings
-title:          Phantom-jekyll
-description:    "Elegant minimalistic Jekyll theme ported from work of HTML5Up"
-baseurl:        "/phantom-jekyll"
-url:            "https://mistermochi.github.io"
+title:          OpenMedicsHK
+description:    "Raising awareness for the healthcare crises in Hong Kong"
+baseurl:        ""
+url:            "https://openmedicshk.github.io"
 
 # Author
 author:
@@ -19,4 +19,4 @@ sass:
   style:        compressed
 
 # Permalinks
-permalink:      /:year-:month-:day/:title
+permalink:      /data/:title/
