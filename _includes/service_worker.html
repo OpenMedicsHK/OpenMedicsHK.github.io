@@ -4,7 +4,11 @@ function showOfflineToast() {
 
 // (1)
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("{{ "/assets/js/sw.js" | relative_url }}").then(function(reg){
+  navigator.serviceWorker.register("{{ "/assets/js/sw.js" | relative_url }}",
+              {
+                scope: '{{ "/" | relative_url }}'
+              }
+                                  ).then(function(reg){
     if (!reg.installing) return;
       console.log("[*] ServiceWorker is installing...");
 
