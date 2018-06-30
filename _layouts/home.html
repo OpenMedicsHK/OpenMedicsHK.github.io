@@ -2,30 +2,26 @@
 layout: default
 ---
 
-<div class="catalogue">
-  {% for post in paginator.posts %}
-    <a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title }}</h1>
-        <div class="catalogue-line"></div>
+<header>
+	<h1>This is Phantom, a free, fully responsive site<br />
+		template designed by <a href="http://html5up.net">HTML5 UP</a>.
+	</h1>
+	<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
+</header>
 
-        <p>
-          {{ post.content | strip_html | truncatewords: 30 }}
-        </p>
-
-      </div>
-    </a>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-  {% endif %}
-
-  <span>{{ paginator.page }}</span>
+<section class="tiles">
+	{% for post in site.posts %}
+	{% assign loopindex = forloop.index | modulo: 6 %}
+	<article class="style{{ loopindex }}">
+		<span class="image">
+			<img src="images/pic0{{ loopindex }}.jpg" alt="" />
+		</span>
+		<a href="{{ post.url | prepend: site.baseurl }}">
+			<h2>{{ post.title }}</h2>
+			<div class="content">
+				<p>{{ post.content | strip_html | truncatewords: 20 }}</p>
+			</div>
+		</a>
+	</article>
+	{% endfor %}
 </div>
