@@ -5,8 +5,6 @@ const version = '{{site.time | date: '%Y%m%d%H%M%S'}}';
 const prefix = "openmedicshk::";
 const staticCacheName = prefix+version;
 
-console.log("installing worker");
-
 const filesToCache = [
   "/",
   {% for page in site.html_pages %}
@@ -25,6 +23,7 @@ self.addEventListener("install", function(e){
   self.skipWaiting();
   e.waitUntil(
     caches.open(staticCacheName).then(function(cache){
+      console.log("Installing new worker "+staticCacheName);
       return cache.addAll(filesToCache);
     })
   )
@@ -38,9 +37,20 @@ self.addEventListener("activate", function(e){
           return cacheName.startsWith(prefix)
             && cacheName != staticCacheName;
         }).map(function(cacheName){
+          console.log("Deleting cache "+cacheName);
           return cache.delete(cacheName);
         })
       )
     })
   )
+});
+
+
+self.addEventListener("fetch", function(e){
+  e.respondWith(
+     caches.match(e.request).then(function(response) {
+       console.log("fetching "+e.request);
+       return response || fetch(e.request);
+     })
+   )
 });
