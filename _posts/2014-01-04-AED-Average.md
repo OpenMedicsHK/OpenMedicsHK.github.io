@@ -2,7 +2,7 @@
 layout: post
 title: 急症室輪候時間
 desc: 各急症室每天在同一時間的平均等候時間。
-proj-num: 1
+img: HKAED.png
 tags: [醫療服務實況]
 level: 第三級
 ---
