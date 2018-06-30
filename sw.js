@@ -50,7 +50,16 @@ self.addEventListener("fetch", function(e){
   e.respondWith(
      caches.match(e.request).then(function(response) {
        console.log("fetching "+e.request);
-       return response || fetch(e.request);
+       if (response){
+         return response
+       }else{
+         caches.open(dataCacheName).then(function(cache) {
+           return fetch(e.request).then(function(response){
+             cache.put(e.request.url, response.clone());
+             return response;
+           });
+         })
+       }
      })
    )
 });
