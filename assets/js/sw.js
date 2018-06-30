@@ -14,6 +14,9 @@ const filesToCache = [
   {% for post in site.posts %}
     '{{ post.url }}',
   {% endfor %}
+  {% for file in site.static_files %}
+    '{{ file.path }}',
+  {% endfor %}
 
   // can be automated rather than manual entries
   "/assets/images/bhavri-github-callbacks.png",
