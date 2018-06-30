@@ -48,18 +48,23 @@ self.addEventListener("activate", function(e){
 
 self.addEventListener("fetch", function(e){
   e.respondWith(
-     caches.match(e.request).then(function(response) {
-       console.log("fetching "+e.request);
-       if (response){
-         return response
-       }else{
-         caches.open(staticCacheName).then(function(cache) {
-           return fetch(e.request).then(function(response){
-             cache.put(e.request.url, response.clone());
-             return response;
-           });
-         })
-       }
+    caches.match(e.request).then(function(cacheResponse) {
+      console.log("fetching "+e.request);
+      caches.open(staticCacheName).then(function(cache) {
+        return fetch(e.request).then(function(response){
+          if (!response.ok) {
+            // An HTTP error response code (40x, 50x) won't cause the fetch() promise to reject.
+            // We need to explicitly throw an exception to trigger the catch() clause.
+            throw Error('response status ' + response.status);
+          }       
+          cache.put(e.request.url, response.clone());
+          return response;
+        }).catch(function(error) {
+          if (cacheResponse){
+            return cacheResponse;
+          }
+        });
+      });
      })
    )
 });
