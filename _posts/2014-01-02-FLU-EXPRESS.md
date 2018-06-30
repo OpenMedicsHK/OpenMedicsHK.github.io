@@ -3,6 +3,7 @@ layout: post
 title: 本地流感流行情況
 desc: 衛生署每週更新的流感監測數據，用以衡量流感流行程度及對公共醫療系統的影響。
 level: 第一級
+img: pic01.jpg
 tags: [公共衛生實況]
 ---
 
