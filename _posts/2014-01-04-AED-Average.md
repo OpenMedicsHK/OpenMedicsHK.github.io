@@ -9,7 +9,7 @@ level: 第三級
 
 > 溫馨提示：
 > 公立醫院急症室實施分流制度，會優先處理情況危殆的病人。非緊急病人的平均輪候會受當日個案量影響，難以估計。為防有需要的病人得不到適切救治，請勿輕易輪候急症服務。
-> 若需要診症服務，可先參考[「基層醫療診所地圖」](/PC-Doctor-List/)或[「普通科診所地圖」](/GOPC-List/)。
+> 若需要診症服務，可先參考[「基層醫療診所地圖」](PC-Doctor-List/)或[「普通科診所地圖」](GOPC-List/)。
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
