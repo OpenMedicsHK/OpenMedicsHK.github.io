@@ -17,13 +17,4 @@ const filesToCache = [
   {% for file in site.static_files %}
     '{{ file.path }}',
   {% endfor %}
-
-  // can be automated rather than manual entries
-  "/assets/images/bhavri-github-callbacks.png",
-  "/assets/images/bhavri-github-issues.png",
-  "/assets/images/jakethecake-svg-line-anime.png",
-  "/assets/images/svg-animated-mast-text-shapes-tweet.png",
-  "css/main.css",
-  "/about/",
-  "/index.html"
 ];
