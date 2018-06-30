@@ -1,14 +1,14 @@
 # Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+title:          Phantom-jekyll
+description:    "Elegant minimalistic Jekyll theme ported from work of HTML5Up"
+baseurl:        "/phantom-jekyll"
+url:            "https://mistermochi.github.io"
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Mister Mochi
+  url:          https://github.com/mistermochi
+  email:        mochitravels@gmail.com
 
 # Build settings
 markdown:       kramdown
@@ -18,10 +18,5 @@ sass:
   sass_dir:     _sass
   style:        compressed
 
-# Gems
-plugins:
-  - jekyll-paginate
-
 # Permalinks
 permalink:      /:year-:month-:day/:title
-paginate:       5
