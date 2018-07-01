@@ -95,6 +95,7 @@ tags: [醫療服務實況]
                     "inverted": true,
                     "polar": false
                 },
+                exporting: { enabled: false },
                 "plotOptions": {
                     "series": {
                         "animation": false,
