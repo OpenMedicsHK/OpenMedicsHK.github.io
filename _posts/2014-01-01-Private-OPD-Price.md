@@ -6,6 +6,7 @@ level: 第二級
 img: pic01.jpg
 tags: [醫療服務實況]
 ---
+<div id="highcharts-BkFmvpSMm"><script src="https://cloud.highcharts.com/inject/BkFmvpSMm/" defer="defer"></script></div>
 
 ## 日診收費
 <div class="resp-container">
