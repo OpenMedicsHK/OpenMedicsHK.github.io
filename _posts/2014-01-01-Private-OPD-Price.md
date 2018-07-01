@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 私立醫院收費一覽
+title: 私立醫院門診收費一覽
 desc: 香港各大私立醫院的門診收費，分別顯示日診及通宵夜診間的收費分別。
 level: 第二級
 img: pic01.jpg
