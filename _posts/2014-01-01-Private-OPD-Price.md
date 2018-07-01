@@ -105,9 +105,7 @@ tags: [醫療服務實況]
                                 "fontWeight": "",
                                 "textOutline": "1px 1px contrast"
                             }
-                        },
-                        borderWidth: 2,
-                        borderColor: 'black'
+                        }
                     }
                 },
                 "title": {
