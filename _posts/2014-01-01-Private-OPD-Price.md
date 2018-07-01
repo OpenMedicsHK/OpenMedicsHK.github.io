@@ -98,6 +98,7 @@ tags: [醫療服務實況]
                 "plotOptions": {
                     "series": {
                         "minPointLength": 5,
+                        "lineWidth": 5,
                         "dataLabels": {
                             "enabled": true,
                             "style": {
@@ -149,13 +150,3 @@ tags: [醫療服務實況]
     }
 })();
 </script>
-
-## 日診收費
-<div class="resp-container">
-  <iframe class="resp-iframe" width="600" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQn_NjN7swJnq_2mo3KgpA735_o8zD0WY2eIMoZJ7P-N6eaLJ57dFmXDdcw5zZ7rB7E77Oyf3qjI7IZ/pubchart?oid=1227975908&amp;format=interactive"></iframe>
-</div>
-
-## 通宵夜診收費
-<div class="resp-container">
-  <iframe class="resp-iframe" width="600" height="400"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQn_NjN7swJnq_2mo3KgpA735_o8zD0WY2eIMoZJ7P-N6eaLJ57dFmXDdcw5zZ7rB7E77Oyf3qjI7IZ/pubchart?oid=1278931466&amp;format=interactive"></iframe>
-</div>
