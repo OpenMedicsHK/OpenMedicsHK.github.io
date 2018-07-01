@@ -97,6 +97,7 @@ tags: [醫療服務實況]
                 },
                 "plotOptions": {
                     "series": {
+                        "animation": false,
                         "minPointLength": 5,
                         "lineWidth": 5,
                         "dataLabels": {
