@@ -89,15 +89,6 @@ tags: [醫療服務實況]
 
     function cl() {
         if (typeof window["Highcharts"] !== "undefined") {
-            Highcharts.setOptions({
-                lang: {
-                    "printChart": "",
-                    "downloadPNG": "",
-                    "downloadJPEG": "",
-                    "downloadSVG": "",
-                    "downloadPDF": ""
-                }
-            });
             var options = {
                 "chart": {
                     "type": "columnrange",
@@ -114,7 +105,9 @@ tags: [醫療服務實況]
                                 "fontWeight": "",
                                 "textOutline": "1px 1px contrast"
                             }
-                        }
+                        },
+                        borderWidth: 2,
+                        borderColor: 'black'
                     }
                 },
                 "title": {
@@ -127,13 +120,6 @@ tags: [醫療服務實況]
                 "series": [],
                 "credits": {
                     "enabled": false
-                },
-                "lang": {
-                    "printChart": "",
-                    "downloadPNG": "",
-                    "downloadJPEG": "",
-                    "downloadSVG": "",
-                    "downloadPDF": ""
                 },
                 "tooltip": {
                     "shared": true
@@ -152,11 +138,11 @@ tags: [醫療服務實況]
                 "data": {
                     "googleSpreadsheetKey": "1E_S9oRGDleMPjUEudbVIR2qLnGBiH1oLQp4BuS2uTJ8",
                     "dataRefreshRate": false,
-                    "enablePolling": true,
+                    "enablePolling": false,
                     "startRow": 0,
-                    "endRow": 1.7976931348623157e+308,
+                    "endRow": 20,
                     "startColumn": 0,
-                    "endColumn": 1.7976931348623157e+308
+                    "endColumn": 20
                 }
             };
             new Highcharts.Chart("highcharts", options);
