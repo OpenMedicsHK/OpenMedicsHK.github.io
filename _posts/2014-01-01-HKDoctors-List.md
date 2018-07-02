@@ -14,7 +14,6 @@ level: 第二級
 var tableid = '1mCZGFOft_K1umKeqIVFuSPcCFfSiooX_TEFoJGEL'; //the table id
 var map;
 var mapDiv;
-var styles;
 var storedResponse;
 
 /* INITIALIZE - initialize the map and geocoder */
@@ -34,45 +33,10 @@ function authenticated(){ google.maps.event.addDomListener(window, 'load', initi
   
 function initialize() {
   mapDiv = document.getElementById('map_canvas');
-  
-  styles = new google.maps.StyledMapType([
-  {
-    "featureType": "administrative.land_parcel",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "elementType": "labels.text",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }
-],
-            {name: '地圖 Map'});
-  
   map = new google.maps.Map(mapDiv, {
     center: new google.maps.LatLng(22.38269281766774, 114.10987863448963), //the center lat and long
     zoom: 11, //zoom
-    mapTypeIds: ['roadmap', 'styled_map']
-    //Associate the styled map with the MapTypeId and set it to display.
-    map.mapTypes.set('styled_map', styles);
-    map.setMapTypeId('styled_map');
+    mapTypeId: google.maps.MapTypeId.ROADMAP //the map style
   });
    var viewport = document.querySelector("meta[name=viewport]");
    viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
@@ -100,4 +64,3 @@ function initialize() {
 </script>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAm_dMcHD1az_PJ3HNyEH1A-ED-EvzUunE&callback=authenticated&v=3"></script>
   <div id="map_canvas"></div>
-
