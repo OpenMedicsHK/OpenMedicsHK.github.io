@@ -47,8 +47,8 @@ function initialize() {
       map: map,
       heatmap: { enabled: false },
       query: {
-        select: "col1",
-        from: "1VGXeyVVrQujQ73WRaEVil6IvwFUWR-7w5FVXdbXV",
+        select: "col6",
+        from: "1mCZGFOft_K1umKeqIVFuSPcCFfSiooX_TEFoJGEL",
         where: ""
       },
       options: {
