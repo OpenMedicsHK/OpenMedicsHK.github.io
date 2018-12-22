@@ -7,7 +7,7 @@ layout: default
   <hr>
   
   {% assign tagdescription = site.data.tagdescription[tag[0]] %}
-  <p>{{ tagdescription }}</p>
+  <p>{{ tagdescription.description }}</p>
   <h3>{{ tag[0] }}</h3>
     
   <section class="tiles">
