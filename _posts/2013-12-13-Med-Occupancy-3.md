@@ -23,9 +23,9 @@ level: 第一級
 資料來源：[政府一站通搜尋功能 www.search.gov.hk](http://www.search.gov.hk/result?query="occupancy+rates"+"medical+wards"+"statistics"+"public hospitals"&search_but=&ui_charset=utf-8&web=this&output=xml_no_dtd&client=depts&proxystylesheet=ogcio_home_adv_frontend&ui_lang=en&r_lang=&gp1=gia_home&gp0=gia_home&web=this&txtonly=0&tpl_id=stdsearch&oe=UTF-8&ie=UTF-8&sort=date%3AS%3AS%3Ad1&site=gia_home&num=50)
   
 <script>
-var hospCats = data[0];
-var dateCats = [];
 var data = {{ site.data.MEDOCCUPANCY | jsonify }};
+var dateCats = [];
+var hospCats = data[0];
 var points = [];
 for (var i = 1; i < data.length; i++){
   dateCats[i-1] = moment(data[i][0], "DD/MM/YYYY").format("M月D日");
