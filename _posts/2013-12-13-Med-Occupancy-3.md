@@ -68,7 +68,6 @@ var chart = new Highcharts.Chart({
     },
 
     xAxis: {
-        categories: hospCats,
 	opposite: true,
         labels: {
             rotation: 90
