@@ -26,3 +26,5 @@ layout: default
   </section>
 
 {% endfor %}
+
+<p>{{ site.data.lastModified | jsonify }}</p>
