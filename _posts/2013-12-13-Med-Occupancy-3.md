@@ -7,11 +7,10 @@ img: pic01.jpg
 level: 第一級
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/zh-hk.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/heatmap.js"></script>
 <script src="https://code.highcharts.com/modules/boost.js"></script>
 
@@ -27,6 +26,7 @@ level: 第一級
 <script>
 var hospCats = ["","東區尤德夫人那打素醫院","律敦治醫院","瑪麗醫院","廣華醫院","伊利沙伯醫院","將軍澳醫院","基督教聯合醫院","明愛醫院","瑪嘉烈醫院","仁濟醫院","雅麗氏何妙齡那打素醫院","北區醫院","威爾斯親王醫院","博愛醫院","屯門醫院"];
 var dateCats = [];
+var data = {{ site.data.MEDOCCUPANCY | jsonify }};
 var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -102,12 +102,13 @@ var chart = new Highcharts.Chart({
         color: 'white'
       }
     },
-    }]
-
+    }],
+    "data": {
+      "rows": data
+    }
 });
 
-  var data = {{ site.data.MEDOCCUPANCY | jsonify }};
-      
+/*
       for (var i = 1; i < data.length; i++){
 	dateCats[i] = data[i][0];
       	for (var j = 1; j < data[i].length; j++){				// ignore first column
@@ -116,9 +117,7 @@ var chart = new Highcharts.Chart({
 	}
 	console.log(Date.now()+" finished loading data");
 	chart.redraw();
-	chart.hideLoading();
 	console.log(Date.now()+" loading hidden");
       //getData(500);
-		
-	chart.showLoading();
+		*/
 </script>
