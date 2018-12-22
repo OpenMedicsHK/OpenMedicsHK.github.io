@@ -5,9 +5,11 @@ layout: default
 
 {% for tag in tags %}
   <hr>
-  <h3>{{ tag | first }}</h3>
   
-  
+  {% assign tagdescription = site.data.tagdescription[tag[0]] %}
+  <p>{{ tagdescription }}</p>
+  <h3>{{ tag[0] }}</h3>
+    
   <section class="tiles">
 	{% for post in tag[1] %}
 	{% assign loopindex = forloop.index | modulo: 6 | plus : 1 %}
