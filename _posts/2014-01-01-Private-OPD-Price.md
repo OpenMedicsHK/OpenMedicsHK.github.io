@@ -147,9 +147,9 @@ tags: [醫療服務實況]
                     },
                     "labels": {}
                 }],
-                "data": [
+                "data": {
                   "rows": raw
-                ]
+                }
             };
             var chart = new Highcharts.Chart("highcharts", options);
             console.log(chart);
