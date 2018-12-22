@@ -110,4 +110,7 @@ var chart = new Highcharts.Chart({
     }]
 });
 
+
+	chart.redraw();
+	chart.hideLoading();
 </script>
