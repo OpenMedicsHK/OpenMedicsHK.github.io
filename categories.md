@@ -7,7 +7,7 @@ layout: default
   <hr>
   {% assign tagdescription = site.data.tagdescription[tag[0]] %}
   <p>{{ site.data.tagdescription | jsonify }}</p>
-  <h2>{{ tag[0] }}</h2>
+  <h3>{{ tag[0] }}</h3>
     
   <section class="tiles">
 	{% for post in tag[1] %}
