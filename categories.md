@@ -8,7 +8,7 @@ layout: default
   
   {% assign tagdescription = site.data.tagdescription[tag[0]] %}
   <p>{{ tagdescription.description }}</p>
-  <h3>{{ tag[0] }}</h3>
+  <h2>{{ tag[0] }}</h2>
     
   <section class="tiles">
 	{% for post in tag[1] %}
