@@ -156,7 +156,7 @@ tags: [醫療服務實況]
                 },
               "series": [{
                   name: 'Random data',
-                  data: [{{ site.data.PRIVATEOPDPRICE | jsonify }}]
+                  data: {{ site.data.PRIVATEOPDPRICE | jsonify }}
                }]
             };
             new Highcharts.Chart("highcharts", options);
