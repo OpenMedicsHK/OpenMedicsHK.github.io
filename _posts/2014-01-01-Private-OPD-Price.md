@@ -159,7 +159,8 @@ tags: [醫療服務實況]
                   data: {{ site.data.PRIVATEOPDPRICE | jsonify }}
                }]
             };
-            new Highcharts.Chart("highcharts", options);
+            var chart = new Highcharts.Chart("highcharts", options);
+            console.log(chart);
         }
     }
 })();
