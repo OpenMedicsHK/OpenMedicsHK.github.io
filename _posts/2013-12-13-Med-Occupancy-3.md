@@ -110,8 +110,8 @@ var chart = new Highcharts.Chart({
       
       for (var i = 0; i < data.length; i++){
 	dateCats[i] = moment(data[i][0], "DD-MM-YYYY").format("M月D日");
-      	for (var j = 1; j < response.rows[i].length; j++){				// ignore first column
-      		chart.series[0].addPoint([j,i,parseInt(response.rows[i][j])],false,false);
+      	for (var j = 1; j < data[i].length; j++){				// ignore first column
+      		chart.series[0].addPoint([j,i,parseInt(data[i][j])],false,false);
 	}
 	}
 	console.log(Date.now()+" finished loading data");
