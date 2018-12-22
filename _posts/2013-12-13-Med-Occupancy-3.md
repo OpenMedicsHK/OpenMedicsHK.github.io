@@ -83,8 +83,8 @@ var chart = new Highcharts.Chart({
 	shadow: false,
 	animation: false,
 	formatter: function () {
-            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> was <br><b>' +
-                this.point.value + '%</b> occupied on <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>';
+            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> 於 <br><b>' +
+                this.series.yAxis.categories[this.point.y] + '</b> 的入住率為 <br><b>' + this.point.value + '％</b>';
         }
     },
 
@@ -109,7 +109,7 @@ var chart = new Highcharts.Chart({
   var data = {{ site.data.MEDOCCUPANCY | jsonify }};
       
       for (var i = 1; i < data.length; i++){
-	//dateCats[i] = moment(data[i][0]).format("M月D日");
+	dateCats[i] = data[i][0];
       	for (var j = 1; j < data[i].length; j++){				// ignore first column
       		chart.series[0].addPoint([j,i,parseInt(data[i][j])],false,false);
 	}
