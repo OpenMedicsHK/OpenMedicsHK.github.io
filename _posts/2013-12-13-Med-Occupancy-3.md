@@ -110,7 +110,8 @@ var chart = new Highcharts.Chart({
     },
     }],
     "data": {
-      "columns": data
+      "columns": data,
+      dateFormat: "dd/mm/YYYY"
     }
 });
 
