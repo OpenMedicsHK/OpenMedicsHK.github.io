@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{% assign cats = site.categories %}
+
+{% for cat in cats %}
+  <p>{{ category | first }}</p>
+{% endfor %}
+
+
 
 <section class="tiles">
 	{% for post in site.posts %}
