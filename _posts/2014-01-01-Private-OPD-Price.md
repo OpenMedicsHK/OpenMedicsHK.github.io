@@ -171,8 +171,8 @@ tags: [醫療服務實況]
           hospName = raw[i]["Name"];
         } else {
           var id = index.substring(0,4);
-          series[ Math.floor(series/2) ].name = id;
-          series[ Math.floor(series/2) ].push([hospName, raw[i][index]]);
+          series[ Math.floor(seriesnum/2) ].name = id;
+          series[ Math.floor(seriesnum/2) ].push([hospName, raw[i][index]]);
           seriesnum ++;
         }
       }        
