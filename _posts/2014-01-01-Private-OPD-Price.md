@@ -16,7 +16,7 @@ tags: [醫療服務實況]
 
 <script>
   (function() {
-    var files = ["https://code.highcharts.com/stock/highstock.js", "https://code.highcharts.com/highcharts-more.js", "https://code.highcharts.com/highcharts-3d.js", "https://code.highcharts.com/modules/data.js", "https://code.highcharts.com/modules/exporting.js", "https://code.highcharts.com/modules/funnel.js", "https://code.highcharts.com/modules/annotations.js", "https://code.highcharts.com/modules/solid-gauge.js"],
+    var files = ["https://code.highcharts.com/stock/highstock.js", "https://code.highcharts.com/highcharts-more.js", "https://code.highcharts.com/highcharts-3d.js", "https://code.highcharts.com/modules/exporting.js", "https://code.highcharts.com/modules/funnel.js", "https://code.highcharts.com/modules/annotations.js", "https://code.highcharts.com/modules/solid-gauge.js"],
         loaded = 0;
     if (typeof window["HighchartsEditor"] === "undefined") {
         window.HighchartsEditor = {
@@ -148,16 +148,7 @@ tags: [醫療服務實況]
                     },
                     "labels": {}
                 }],
-                "data": {
-                    "googleSpreadsheetKey": "1E_S9oRGDleMPjUEudbVIR2qLnGBiH1oLQp4BuS2uTJ8",
-                    "dataRefreshRate": false,
-                    "enablePolling": false,
-                    "startRow": 0,
-                    "endRow": 20,
-                    "startColumn": 0,
-                    "endColumn": 20
-                },
-              "series": series
+                "series": series
             };
             var chart = new Highcharts.Chart("highcharts", options);
             console.log(chart);
