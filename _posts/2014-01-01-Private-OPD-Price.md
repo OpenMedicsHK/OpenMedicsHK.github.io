@@ -95,7 +95,7 @@ tags: [醫療服務實況]
         inc[t.src.substr(0, t.src.indexOf("?"))] = 1;
     });
     
-    var jsondata = {% include PRVIATEOPDPRICE.json %};
+    var jsondata = {% include PRVIATEOPDPRICE.html %};
 
     function cl() {
         if (typeof window["Highcharts"] !== "undefined") {
