@@ -57,12 +57,12 @@ var chart = new Highcharts.Chart({
     },
 
     yAxis: {
-	reversed:true,
-	title:null
-        type: 'datetime',
+	reversed: true,
+	title: null,
+        type: 'datetime'
     },
     
-        credits: {
+    credits: {
         enabled: false
     },
     
