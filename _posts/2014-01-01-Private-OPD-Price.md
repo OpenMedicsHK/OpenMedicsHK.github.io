@@ -16,7 +16,7 @@ tags: [醫療服務實況]
 
 <script>
   (function() {
-    var files = ["https://code.highcharts.com/stock/highstock.js", "https://code.highcharts.com/modules/data.js", "https://code.highcharts.com/highcharts-more.js", "https://code.highcharts.com/modules/exporting.js", "https://code.highcharts.com/modules/funnel.js", "https://code.highcharts.com/modules/annotations.js"],
+    var files = ["https://code.highcharts.com/stock/highstock.js", "https://code.highcharts.com/modules/data.js", "https://code.highcharts.com/highcharts-more.js", "https://code.highcharts.com/modules/exporting.js", "https://code.highcharts.com/modules/annotations.js"],
         loaded = 0;
     if (typeof window["HighchartsEditor"] === "undefined") {
         window.HighchartsEditor = {
@@ -129,24 +129,12 @@ tags: [醫療服務實況]
                     "text": ""
                 },
                 "exporting": {},
-                "series": [],
                 "credits": {
                     "enabled": false
                 },
                 "tooltip": {
                     "shared": true
                 },
-                "legend": {},
-                "xAxis": [{
-                    "title": {},
-                    "labels": {}
-                }],
-                "yAxis": [{
-                    "title": {
-                        "text": ""
-                    },
-                    "labels": {}
-                }],
                 "data": {
                   "rows": raw
                 }
