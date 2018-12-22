@@ -55,7 +55,6 @@ var chart = new Highcharts.Chart({
     },
 
     yAxis: {
-        categories: dateCats,
 	reversed:true,
 	title:null
     },
