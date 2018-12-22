@@ -27,12 +27,6 @@ var data = {{ site.data.MEDOCCUPANCY | jsonify }};
 var dateCats = [];
 var hospCats = data[0];
 var points = [];
-for (var i = 1; i < data.length; i++){
-  dateCats[i] = moment(data[i][0], "DD/MM/YYYY").format("M月D日");
-  for (var j = 1; j < data[i].length; j++){				// ignore first column
-    points.push([j,i,parseInt(data[i][j])]);
-  }
-}
 var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
@@ -110,6 +104,12 @@ var chart = new Highcharts.Chart({
     }]
 });
 
+for (var i = 1; i < data.length; i++){
+  dateCats[i] = moment(data[i][0], "DD/MM/YYYY").format("M月D日");
+  for (var j = 1; j < data[i].length; j++){				// ignore first column
+    chart.series[0].addPoint([j,i,parseInt(data[i][j])],false,false);
+  }
+}
 
 	chart.redraw();
 	chart.hideLoading();
