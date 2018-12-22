@@ -109,7 +109,7 @@ var chart = new Highcharts.Chart({
   var data = {{ site.data.MEDOCCUPANCY | jsonify }};
       
       for (var i = 1; i < data.length; i++){
-	dateCats[i] = moment(data[i][0]).format("M月D日");
+	//dateCats[i] = moment(data[i][0]).format("M月D日");
       	for (var j = 1; j < data[i].length; j++){				// ignore first column
       		chart.series[0].addPoint([j,i,parseInt(data[i][j])],false,false);
 	}
