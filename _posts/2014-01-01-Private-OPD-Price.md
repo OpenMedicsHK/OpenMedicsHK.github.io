@@ -94,13 +94,15 @@ tags: [醫療服務實況]
     each(document.querySelectorAll("script"), function(t) {
         inc[t.src.substr(0, t.src.indexOf("?"))] = 1;
     });
+    
+    var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
+    var jsonData = [];                 
 
     function cl() {
         if (typeof window["Highcharts"] !== "undefined") {
             var options = {
                 "chart": {
                     "type": "columnrange",
-                    "inverted": true,
                     "polar": false
                 },
                 exporting: { enabled: false },
@@ -156,12 +158,18 @@ tags: [醫療服務實況]
                 },
               "series": [{
                   name: 'Random data',
-                  data: {{ site.data.PRIVATEOPDPRICE | jsonify }}
+                  data: jsonData
                }]
             };
             var chart = new Highcharts.Chart("highcharts", options);
             console.log(chart);
         }
     }
+    
+    
+    for (i = 0; i < raw.length; i++){
+        processed_json.push([data[i].key, data[i].value]);
+    }
+
 })();
 </script>
