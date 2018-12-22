@@ -109,7 +109,7 @@ var chart = new Highcharts.Chart({
     },
     }],
     "data": {
-      "rows": data
+      "columns": data
     }
 });
 
