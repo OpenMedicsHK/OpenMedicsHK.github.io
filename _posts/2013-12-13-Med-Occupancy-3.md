@@ -113,16 +113,4 @@ var chart = new Highcharts.Chart({
     }
 });
 
-/*
-      for (var i = 1; i < data.length; i++){
-	dateCats[i] = data[i][0];
-      	for (var j = 1; j < data[i].length; j++){				// ignore first column
-      		chart.series[0].addPoint([j,i,parseInt(data[i][j])],false,false);
-	}
-	}
-	console.log(Date.now()+" finished loading data");
-	chart.redraw();
-	console.log(Date.now()+" loading hidden");
-      //getData(500);
-		*/
 </script>
