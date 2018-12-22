@@ -4,13 +4,12 @@ layout: default
 {% assign tags = site.tags %}
 
 {% for tag in tags %}
-  <p>{{ tag | first }}</p>
-{% endfor %}
-
-
-
-<section class="tiles">
-	{% for post in site.posts %}
+  <hr>
+  <h3>{{ tag | first }}</h3>
+  
+  
+  <section class="tiles">
+	{% for post in category[1] %}
 	{% assign loopindex = forloop.index | modulo: 6 | plus : 1 %}
 	<article class="style{{ loopindex }}">
 		<span class="image">
@@ -24,4 +23,6 @@ layout: default
 		</a>
 	</article>
 	{% endfor %}
-</section>
+  </section>
+
+{% endfor %}
