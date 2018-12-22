@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-{% assign cats = site.categories %}
+{% assign tags = site.tags %}
 
-{% for cat in cats %}
-  <p>{{ category | first }}</p>
+{% for tag in tags %}
+  <p>{{ tag | first }}</p>
 {% endfor %}
 
 
