@@ -32,6 +32,8 @@ for (var i = 1; i < data.length; i++){
   }
 }
 
+console.log(data);
+
 var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
