@@ -96,7 +96,6 @@ tags: [醫療服務實況]
     });
     
     var raw = {{ site.data.PRIVATEOPDPRICE | jsonify }};
-    var series = [{name:"",data:[]},{name:"",data:[]}];
 
     function cl() {
         if (typeof window["Highcharts"] !== "undefined") {
@@ -153,20 +152,6 @@ tags: [醫療服務實況]
             var chart = new Highcharts.Chart("highcharts", options);
             console.log(chart);
         }
-    }
-    for (i = 0; i < raw.length; i++){
-      seriesnum = 0;
-      var hospName;
-      for (index in raw[i]){
-        if (index == "Name"){
-          hospName = raw[i]["Name"];
-        } else {
-          var id = index.substring(0,4);
-          series[ Math.floor(seriesnum/2) ].name = id;
-          series[ Math.floor(seriesnum/2) ].data.push([hospName, raw[i][index]]);
-          seriesnum ++;
-        }
-      }        
     }
     console.log(series);
 
