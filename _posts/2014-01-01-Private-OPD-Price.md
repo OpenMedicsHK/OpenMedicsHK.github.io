@@ -172,11 +172,12 @@ tags: [醫療服務實況]
         } else {
           var id = index.substring(0,4);
           series[ Math.floor(series/2) ].name = id;
-          series[ Math.floor(series/2) ].push([hospName, raw[i][index]]);\
+          series[ Math.floor(series/2) ].push([hospName, raw[i][index]]);
           seriesnum ++;
         }
       }        
     }
+    console.log(series);
 
 })();
 </script>
