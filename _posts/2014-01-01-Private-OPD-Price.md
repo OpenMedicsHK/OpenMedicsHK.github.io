@@ -6,7 +6,14 @@ level: 第二級
 img: pic01.jpg
 tags: [醫療服務實況]
 ---
-<div id="highcharts"></div><script>
+<div id="highcharts"></div>
+
+註：
+
+1. 以上收費均以各醫院最新公布為準
+2. 上列收費為基本門診收費，並未包含藥物、行政、或額外檢查所產生之費用。
+
+<script>
   (function() {
     var files = ["https://code.highcharts.com/stock/highstock.js", "https://code.highcharts.com/highcharts-more.js", "https://code.highcharts.com/highcharts-3d.js", "https://code.highcharts.com/modules/data.js", "https://code.highcharts.com/modules/exporting.js", "https://code.highcharts.com/modules/funnel.js", "https://code.highcharts.com/modules/annotations.js", "https://code.highcharts.com/modules/solid-gauge.js"],
         loaded = 0;
