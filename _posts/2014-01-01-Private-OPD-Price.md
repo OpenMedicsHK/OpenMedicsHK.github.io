@@ -94,6 +94,8 @@ tags: [醫療服務實況]
     each(document.querySelectorAll("script"), function(t) {
         inc[t.src.substr(0, t.src.indexOf("?"))] = 1;
     });
+    
+    var jsondata = {{ site.data.PRVIATEOPDPRICE }};
 
     function cl() {
         if (typeof window["Highcharts"] !== "undefined") {
@@ -156,7 +158,7 @@ tags: [醫療服務實況]
                 },
               "series": [{
                   name: 'Random data',
-                  data: [{{ site.data.PRVIATEOPDPRICE }}]
+                  data: []
                }]
             };
             new Highcharts.Chart("highcharts", options);
