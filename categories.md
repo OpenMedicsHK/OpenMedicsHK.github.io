@@ -9,7 +9,7 @@ layout: default
   
   
   <section class="tiles">
-	{% for post in category[1] %}
+	{% for post in tag[1] %}
 	{% assign loopindex = forloop.index | modulo: 6 | plus : 1 %}
 	<article class="style{{ loopindex }}">
 		<span class="image">
