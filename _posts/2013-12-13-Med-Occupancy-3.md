@@ -38,7 +38,6 @@ var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'container',
             type: 'heatmap',
-	    inverted: true,
             marginTop: 150,
             marginBottom: 15,
         },
