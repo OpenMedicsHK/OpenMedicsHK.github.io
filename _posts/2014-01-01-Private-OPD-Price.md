@@ -154,9 +154,10 @@ tags: [醫療服務實況]
                     "startColumn": 0,
                     "endColumn": 20
                 },
-                "data2": {
-                    {{ site.data.PRVIATEOPDPRICE }}
-                }
+              "series": [{
+                  name: 'Random data',
+                  data: [{{ site.data.PRVIATEOPDPRICE }}]
+               }]
             };
             new Highcharts.Chart("highcharts", options);
         }
