@@ -13,7 +13,11 @@ level: 第一級
 
 資料來源：[政府一站通搜尋功能 www.search.gov.hk](http://www.search.gov.hk/result?query="occupancy+rates"+"medical+wards"+"statistics"+"public hospitals"&search_but=&ui_charset=utf-8&web=this&output=xml_no_dtd&client=depts&proxystylesheet=ogcio_home_adv_frontend&ui_lang=en&r_lang=&gp1=gia_home&gp0=gia_home&web=this&txtonly=0&tpl_id=stdsearch&oe=UTF-8&ie=UTF-8&sort=date%3AS%3AS%3Ad1&site=gia_home&num=50)
 
-<iframe width="1200" height="2000" src="https://datastudio.google.com/embed/reporting/1tPYnKi3QEsmLoRVS9mXMnx8dY8kaaW5a/page/8are" frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe width="300" height="400" src="https://datastudio.google.com/embed/reporting/1tPYnKi3QEsmLoRVS9mXMnx8dY8kaaW5a/page/8bre" frameborder="0" style="border:0"></iframe>
+
+<iframe width="300" height="400" src="https://datastudio.google.com/embed/reporting/1tPYnKi3QEsmLoRVS9mXMnx8dY8kaaW5a/page/4pte" frameborder="0" style="border:0"></iframe>
+
+<iframe width="300" height="400" src="https://datastudio.google.com/embed/reporting/1tPYnKi3QEsmLoRVS9mXMnx8dY8kaaW5a/page/Gqte" frameborder="0" style="border:0"></iframe>
 
 <iframe width="300" height="400" src="https://datastudio.google.com/embed/reporting/1tPYnKi3QEsmLoRVS9mXMnx8dY8kaaW5a/page/aqte" frameborder="0" style="border:0"></iframe>
 
