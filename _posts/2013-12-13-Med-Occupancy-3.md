@@ -28,7 +28,7 @@ var dateCats = [];
 var hospCats = data[0];
 var points = [];
 for (var i = 1; i < data.length; i++){
-  dateCats[i-1] = moment(data[i][0], "DD/MM/YYYY").format("M月D日");
+  dateCats[i] = moment(data[i][0], "DD/MM/YYYY").format("M月D日");
   for (var j = 1; j < data[i].length; j++){				// ignore first column
     points.push([j,i,parseInt(data[i][j])]);
   }
@@ -60,8 +60,7 @@ var chart = new Highcharts.Chart({
 	reversed:true,
 	title:null
     },
-    
-        credits: {
+    credits: {
         enabled: false
     },
     
