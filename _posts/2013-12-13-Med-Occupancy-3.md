@@ -105,29 +105,13 @@ var chart = new Highcharts.Chart({
     }]
 
 });
-	
-	function getData(fetchSize){
-		
-    sheetrock({
-      url: mySpreadsheet,  
-      query: "select A,B,C,D,E,F,G,H,I,K,L,M,N,O,P,R order by A desc",
-      fetchSize: fetchSize,
-      callback: updateChart
-    });
-    
-    }
-    
-    function updateChart(error, options, response) {
-      console.log(Date.now()+" returned with data");
-      if (!response || !response.rows){
-        console.log(error);
-      	return;
-      }
-      hospCats.push(response.attributes.labels);
-      for (var i = 0; i < response.rows.length; i++){
-	dateCats[i] = moment(response.rows[i].cellsArray[0], "DD-MM-YYYY").format("M月D日");
-      	for (var j = 1; j < response.rows[i].cellsArray.length; j++){				// ignore first column
-      		chart.series[0].addPoint([j,i,parseInt(response.rows[i].cellsArray[j])],false,false);
+
+  var data = {{ site.data.MEDOCCUPANCY | jsonify }};
+      
+      for (var i = 0; i < data.length; i++){
+	dateCats[i] = moment(data[i][0], "DD-MM-YYYY").format("M月D日");
+      	for (var j = 1; j < response.rows[i].length; j++){				// ignore first column
+      		chart.series[0].addPoint([j,i,parseInt(response.rows[i][j])],false,false);
 	}
 	}
 	console.log(Date.now()+" finished loading data");
@@ -135,10 +119,6 @@ var chart = new Highcharts.Chart({
 	chart.hideLoading();
 	console.log(Date.now()+" loading hidden");
       //getData(500);
-		}
-
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1GeNrS2JWKxOWAJEEMzUfZ5rm3z-JPGa5l0wunv3w1C0/edit#gid=0';
-	console.log(Date.now()+" starting script");
-  	getData(100);
+		
 	chart.showLoading();
 </script>
