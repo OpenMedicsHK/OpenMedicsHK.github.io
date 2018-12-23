@@ -16,12 +16,9 @@ tags: [健康資訊]
 <div class="total_data">
 </div>
 <form id="search_form">
-	<input type="text" id="selector"  placeholder="Search..">
+	<input class="typeahead" type="text" id="selector"  placeholder="Search..">
 	<input type="submit" id="submit">
 </form>	
-<div id="the-basics">
-  <input class="typeahead" type="text" placeholder="Test searchbar">
-</div>
 <div class="result_count"></div>
 <div class="result_link">
 </div>
@@ -95,7 +92,7 @@ tags: [健康資訊]
 
 var names = {{ site.data.INFOSHEETNAMES | jsonify }};
 
-$('#the-basics .typeahead').typeahead({
+$('#search_form .typeahead').typeahead({
   hint: true,
   highlight: true,
   minLength: 3
