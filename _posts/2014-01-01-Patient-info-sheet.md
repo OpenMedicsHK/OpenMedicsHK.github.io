@@ -10,7 +10,7 @@ tags: [健康資訊]
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 ## 健康資訊搜尋器
-本搜尋引擎將為你搜尋醫管局、衛生署、各大醫院及醫學院所提供的資料。<span id="db_count"></span>
+本搜尋引擎將為你搜尋醫管局、衛生署、各大醫院及醫學院所提供的資料。本資料庫現存有 {{ site.data.INFOSHEETCOUNT }} 份資料。
 
 <div class="total_data">
 </div>
@@ -25,18 +25,6 @@ tags: [健康資訊]
 <script>
     function base64toImg(base64){
         return "<img src='data:image/png;base64,"+base64.replace(/["']/g, "")+"'>";
-    }
-    function updateSum(error, options, response) {
-      console.log(response.rows);
-      $('div.total_data').empty();
-      $('div.total_data').text("We have indexed "+response.rows[0].cellsArray[0]+" patient education resources, and counting.")
-    }
-    function updateTotal(response) {
-      if (!response || !response.rows || !response.rows[0] || !response.rows[0][0])
-         return;
-      console.log(response.rows);
-      $('#db_count').empty();
-      $('#db_count').text("本資料庫現存有 "+response.rows[0][0]+" 份資料。")
     }
     function updateChart(response) {
 	if (!response.rows){
@@ -78,19 +66,4 @@ tags: [健康資訊]
 	});		
         $('div.result_link').text("Loading...");		    
     });	
-    // Show total number
-    
-	$.ajax({
-	    url: "https://script.google.com/macros/s/AKfycbzr0R-IGH3xbXPcIs81BF1q_oe_6SQ34t7F1GpZxsXMykTlXA/exec?total=t",
-
-	    // The name of the callback parameter, as specified by the YQL service
-	    jsonpCallback: 'callback',
-
-	    // Tell jQuery we're expecting JSONP
-	    dataType: "jsonp",
-
-	    // Work with the response
-	    success: updateTotal
-	});		
-			
 </script>
