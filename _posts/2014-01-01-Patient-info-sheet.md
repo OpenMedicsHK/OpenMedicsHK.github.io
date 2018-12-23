@@ -77,7 +77,7 @@ var names = new Bloodhound({
   local: nameArray
 });
 
-$('#search_form .typeahead').typeahead({
+$('#bloodhound .typeahead').typeahead({
   hint: true,
   highlight: true,
   minLength: 3
