@@ -16,7 +16,9 @@ tags: [健康資訊]
 <div class="total_data">
 </div>
 <form id="search_form">
-	<input class="typeahead" type="text" id="selector"  placeholder="Search..">
+	<div id="bloodhound">
+		<input class="typeahead" type="text" id="selector"  placeholder="Search..">
+	</div>
 	<input type="submit" id="submit">
 </form>	
 <div class="result_count"></div>
