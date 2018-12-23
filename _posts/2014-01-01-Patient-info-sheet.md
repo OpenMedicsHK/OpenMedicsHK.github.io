@@ -67,30 +67,12 @@ tags: [健康資訊]
 	});		
         $('div.result_link').text("Loading...");		    
     });	
-    
-    var substringMatcher = function(strArray) {
-  return function findMatches(q, cb) {
-    var matches, substringRegex;
 
-    // an array that will be populated with substring matches
-    matches = [];
-
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i');
-
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strArray, function(i, str) {
-      if (substrRegex.test(str[0])) {
-        matches.push(str[0]);
-      }
-    });
-
-    cb(matches);
-  };
-};
-
-var names = {{ site.data.INFOSHEETNAMES | jsonify }};
+var names = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.whitespace,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  local: [].concat({{ site.data.INFOSHEETNAMES | jsonify }});
+});
 
 $('#search_form .typeahead').typeahead({
   hint: true,
@@ -99,6 +81,6 @@ $('#search_form .typeahead').typeahead({
 },
 {
   name: 'states',
-  source: substringMatcher(names)
+  source: names
 });
 </script>
