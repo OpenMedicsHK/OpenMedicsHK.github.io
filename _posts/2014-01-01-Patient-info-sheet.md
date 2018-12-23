@@ -80,7 +80,7 @@ var names = new Bloodhound({
 $('#bloodhound .typeahead').typeahead({
   hint: true,
   highlight: true,
-  minLength: 2
+  minLength: 1
 },
 {
   name: 'names',
