@@ -71,7 +71,7 @@ tags: [健康資訊]
         $('div.result_link').text("Loading...");		    
     });	
     
-    var substringMatcher = function(strs) {
+    var substringMatcher = function(strArray) {
   return function findMatches(q, cb) {
     var matches, substringRegex;
 
@@ -83,9 +83,9 @@ tags: [健康資訊]
 
     // iterate through the pool of strings and for any string that
     // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
-      if (substrRegex.test(str)) {
-        matches.push(str);
+    $.each(strArray, function(i, str) {
+      if (substrRegex.test(str[0])) {
+        matches.push(str[0]);
       }
     });
 
@@ -93,24 +93,15 @@ tags: [健康資訊]
   };
 };
 
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
+var names = {{ site.data.INFOSHEETNAMES | jsonify }};
 
 $('#the-basics .typeahead').typeahead({
   hint: true,
   highlight: true,
-  minLength: 1
+  minLength: 3
 },
 {
   name: 'states',
-  source: substringMatcher(states)
+  source: substringMatcher(names)
 });
 </script>
