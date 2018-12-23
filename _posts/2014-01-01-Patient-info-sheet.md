@@ -71,7 +71,7 @@ tags: [健康資訊]
 var names = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  local: [].concat({{ site.data.INFOSHEETNAMES | jsonify }});
+  local: [].concat({{ site.data.INFOSHEETNAMES | jsonify }})
 });
 
 $('#search_form .typeahead').typeahead({
