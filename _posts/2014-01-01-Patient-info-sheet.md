@@ -68,10 +68,11 @@ tags: [健康資訊]
         $('div.result_link').text("Loading...");		    
     });	
 
+var nameArray = [].concat({{ site.data.INFOSHEETNAMES | jsonify }});
 var names = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  local: [].concat({{ site.data.INFOSHEETNAMES | jsonify }})
+  local: nameArray
 });
 
 $('#search_form .typeahead').typeahead({
@@ -80,7 +81,7 @@ $('#search_form .typeahead').typeahead({
   minLength: 3
 },
 {
-  name: 'states',
+  name: 'names',
   source: names
 });
 </script>
