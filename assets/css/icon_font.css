@@ -25,7 +25,7 @@ i {
 }
 
 /* Default icon for all HA hospitals =========== */
-[class*="ic-ha-"]:before {
+[class^="ic-ha"]:before {
   content: "\e905";
 }
 .ic-ha-RH:before {
