@@ -24,6 +24,10 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Default icon for all HA hospitals =========== */
+[class*="ic-ha-"]:before {
+  content: "\e905";
+}
 .ic-ha-RH:before {
   content: "\e900";
 }
@@ -56,9 +60,6 @@ i {
 }
 .ic-ha-TPH:before {
   content: "\e904";
-}
-.ic-ha-HA:before {
-  content: "\e905";
 }
 .ic-ha-SJH:before {
   content: "\e906";
