@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'HAICON';
-  src:  url('fonts/HAICON.eot?6fwkqd');
-  src:  url('fonts/HAICON.eot?6fwkqd#iefix') format('embedded-opentype'),
-    url('fonts/HAICON.ttf?6fwkqd') format('truetype'),
-    url('fonts/HAICON.woff?6fwkqd') format('woff'),
-    url('fonts/HAICON.svg?6fwkqd#HAICON') format('svg');
+  src:  url('../fonts/HAICON.eot?6fwkqd');
+  src:  url('../fonts/HAICON.eot?6fwkqd#iefix') format('embedded-opentype'),
+    url('../fonts/HAICON.ttf?6fwkqd') format('truetype'),
+    url('../fonts/HAICON.woff?6fwkqd') format('woff'),
+    url('../fonts/HAICON.svg?6fwkqd#HAICON') format('svg');
   font-weight: normal;
   font-style: normal;
 }
