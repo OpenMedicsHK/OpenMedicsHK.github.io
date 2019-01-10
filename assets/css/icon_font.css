@@ -24,84 +24,105 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-RH:before {
-  content: "\52";
-}
-.icon-TWH:before {
-  content: "\e91a";
-}
-.icon-CMC:before {
-  content: "\e91b";
-}
-.icon-SH:before {
-  content: "\e90f";
-}
-.icon-TPH:before {
-  content: "\e910";
-}
-.icon-HA:before {
-  content: "\e90c";
-}
-.icon-SJH:before {
-  content: "\e90d";
-}
-.icon-NDH:before {
-  content: "\e911";
-}
-.icon-KH:before {
-  content: "\e912";
-}
-.icon-BBH:before {
-  content: "\e913";
-}
-.icon-CHCHK:before {
-  content: "\e914";
-}
-.icon-DKCH:before {
-  content: "\e90e";
-}
-.icon-SLH:before {
-  content: "\e915";
-}
-.icon-HOHH:before {
-  content: "\e916";
-}
-.icon-CPH:before {
-  content: "\e917";
-}
-.icon-KCH:before {
-  content: "\e918";
-}
-.icon-POH:before {
-  content: "\e90b";
-}
-.icon-YCH:before {
-  content: "\e909";
-}
-.icon-AHNH:before {
+.RH:before {
   content: "\e900";
 }
-.icon-TKOH:before {
+.TWH:before {
   content: "\e901";
 }
-.icon-UCH:before {
+.TWEH:before {
+  content: "\e901";
+}
+.TWGHFYKH:before {
+  content: "\e901";
+}
+.KWH:before {
+  content: "\e901";
+}
+.TWGHWTSH:before {
+  content: "\e901";
+}
+.WTSH:before {
+  content: "\e901";
+}
+.TWTSH:before {
+  content: "\e901";
+}
+.CMC:before {
   content: "\e902";
 }
-.icon-QMH:before {
+.SH:before {
   content: "\e903";
 }
-.icon-HKEH:before {
+.TPH:before {
   content: "\e904";
 }
-.icon-PWH:before {
+.HA:before {
   content: "\e905";
 }
-.icon-QEH:before {
+.SJH:before {
   content: "\e906";
 }
-.icon-PYN:before {
+.NDH:before {
   content: "\e907";
 }
-.icon-TMH:before {
+.KH:before {
   content: "\e908";
+}
+.BH:before {
+  content: "\e909";
+}
+.BBH:before {
+  content: "\e909";
+}
+.DKCHSB:before {
+  content: "\e90b";
+}
+.SLH:before {
+  content: "\e90c";
+}
+.HHH:before {
+  content: "\e90d";
+}
+.CPH:before {
+  content: "\e90e";
+}
+.KCH:before {
+  content: "\e90f";
+}
+.POH:before {
+  content: "\e910";
+}
+.YCH:before {
+  content: "\e911";
+}
+.AHNH:before {
+  content: "\e912";
+}
+.AHMLNH:before {
+  content: "\e912";
+}
+.TKOH:before {
+  content: "\e913";
+}
+.UCH:before {
+  content: "\e914";
+}
+.QMH:before {
+  content: "\e915";
+}
+.HKEH:before {
+  content: "\e916";
+}
+.PWH:before {
+  content: "\e917";
+}
+.QEH:before {
+  content: "\e918";
+}
+.PYNEH:before {
+  content: "\e919";
+}
+.TMH:before {
+  content: "\e91a";
 }
