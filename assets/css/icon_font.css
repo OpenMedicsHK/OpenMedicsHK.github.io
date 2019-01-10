@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'HAICON';
-  src:  url('../fonts/HAICON.eot?2ru9lv');
-  src:  url('../fonts/HAICON.eot?2ru9lv#iefix') format('embedded-opentype'),
-    url('../fonts/HAICON.ttf?2ru9lv') format('truetype'),
-    url('../fonts/HAICON.woff?2ru9lv') format('woff'),
-    url('../fonts/HAICON.svg?2ru9lv#HAICON') format('svg');
+  src:  url('../fonts/HAICON.eot?7yeyg3');
+  src:  url('../fonts/HAICON.eot?7yeyg3#iefix') format('embedded-opentype'),
+    url('../fonts/HAICON.ttf?7yeyg3') format('truetype'),
+    url('../fonts/HAICON.woff?7yeyg3') format('woff'),
+    url('../fonts/HAICON.svg?7yeyg3#HAICON') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,105 +24,115 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.RH:before {
+.ic-ha-RH:before {
   content: "\e900";
 }
-.TWH:before {
+.ic-ha-TWH:before {
   content: "\e901";
 }
-.TWEH:before {
+.ic-ha-TWEH:before {
   content: "\e901";
 }
-.TWGHFYKH:before {
+.ic-ha-TWGHFYKH:before {
   content: "\e901";
 }
-.KWH:before {
+.ic-ha-KWH:before {
   content: "\e901";
 }
-.TWGHWTSH:before {
+.ic-ha-TWGHWTSH:before {
   content: "\e901";
 }
-.WTSH:before {
+.ic-ha-WTSH:before {
   content: "\e901";
 }
-.TWTSH:before {
+.ic-ha-TWTSH:before {
   content: "\e901";
 }
-.CMC:before {
+.ic-ha-CMC:before {
   content: "\e902";
 }
-.SH:before {
+.ic-ha-SH:before {
   content: "\e903";
 }
-.TPH:before {
+.ic-ha-TPH:before {
   content: "\e904";
 }
-.HA:before {
+.ic-ha-HA:before {
   content: "\e905";
 }
-.SJH:before {
+.ic-ha-SJH:before {
   content: "\e906";
 }
-.NDH:before {
+.ic-ha-NDH:before {
   content: "\e907";
 }
-.KH:before {
+.ic-ha-KH:before {
   content: "\e908";
 }
-.BH:before {
+.ic-ha-BH:before {
   content: "\e909";
 }
-.BBH:before {
+.ic-ha-BBH:before {
   content: "\e909";
 }
-.DKCHSB:before {
+.ic-ha-CHCHK:before {
+  content: "\e90a";
+}
+.ic-ha-CHS:before {
+  content: "\e90a";
+}
+.ic-ha-DKCHSB:before {
   content: "\e90b";
 }
-.SLH:before {
+.ic-ha-SLH:before {
   content: "\e90c";
 }
-.HHH:before {
+.ic-ha-HHH:before {
   content: "\e90d";
 }
-.CPH:before {
+.ic-ha-CPH:before {
   content: "\e90e";
 }
-.KCH:before {
+.ic-ha-KCH:before {
   content: "\e90f";
 }
-.POH:before {
+.ic-ha-POH:before {
   content: "\e910";
 }
-.YCH:before {
+.ic-ha-YCH:before {
   content: "\e911";
 }
-.AHNH:before {
+.ic-ha-PMH:before {
+  content: "\e91b";
+  color: #fff;
+}
+.ic-ha-AHNH:before {
   content: "\e912";
 }
-.AHMLNH:before {
+.ic-ha-AHMLNH:before {
   content: "\e912";
 }
-.TKOH:before {
+.ic-ha-TKOH:before {
   content: "\e913";
 }
-.UCH:before {
+.ic-ha-UCH:before {
   content: "\e914";
 }
-.QMH:before {
+.ic-ha-QMH:before {
   content: "\e915";
 }
-.HKEH:before {
+.ic-ha-HKEH:before {
   content: "\e916";
 }
-.PWH:before {
+.ic-ha-PWH:before {
   content: "\e917";
 }
-.QEH:before {
+.ic-ha-QEH:before {
   content: "\e918";
 }
-.PYNEH:before {
+.ic-ha-PYNEH:before {
   content: "\e919";
 }
-.TMH:before {
+.ic-ha-TMH:before {
   content: "\e91a";
 }
