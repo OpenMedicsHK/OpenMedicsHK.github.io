@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'HAICON';
-  src:  url('../fonts/HAICON.eot?7yeyg3');
-  src:  url('../fonts/HAICON.eot?7yeyg3#iefix') format('embedded-opentype'),
-    url('../fonts/HAICON.ttf?7yeyg3') format('truetype'),
-    url('../fonts/HAICON.woff?7yeyg3') format('woff'),
-    url('../fonts/HAICON.svg?7yeyg3#HAICON') format('svg');
+  src:  url('../fonts/HAICON.eot?d8838r');
+  src:  url('../fonts/HAICON.eot?d8838r#iefix') format('embedded-opentype'),
+    url('../fonts/HAICON.ttf?d8838r') format('truetype'),
+    url('../fonts/HAICON.woff?d8838r') format('woff'),
+    url('../fonts/HAICON.svg?d8838r#HAICON') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,6 +27,19 @@ i {
 /* Default icon for all HA hospitals =========== */
 [class^='ic-ha']:before {
   content: "\e905";
+}
+
+.ic-ha-HKBH:before {
+  content: "\e91c";
+}
+.ic-ha-RCBTS:before {
+  content: "\e91d";
+}
+.ic-ha-HKRCBTS:before {
+  content: "\e91d";
+}
+.ic-ha-OLMH:before {
+  content: "\e91e";
 }
 .ic-ha-RH:before {
   content: "\e900";
@@ -60,6 +73,9 @@ i {
 }
 .ic-ha-TPH:before {
   content: "\e904";
+}
+.ic-ha-HA:before {
+  content: "\e905";
 }
 .ic-ha-SJH:before {
   content: "\e906";
@@ -105,7 +121,6 @@ i {
 }
 .ic-ha-PMH:before {
   content: "\e91b";
-  color: #fff;
 }
 .ic-ha-AHNH:before {
   content: "\e912";
