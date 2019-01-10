@@ -1,0 +1,9 @@
+{% assign abbrev = "" %}
+{% assign words = include.name | upcase | split: " " %}
+{% for w in words %}
+  {% if w != "OF" and w != "AT" and w != "THE" %}
+    {% assign slug = w | slice: 0 %}
+    {% assign abbrev = abbrev | append: slug %}
+  {% endif %}
+{% endfor %}
+<i class="ic-ha-{{ abbrev }}"></i>
