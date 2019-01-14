@@ -20,3 +20,21 @@ sass:
 
 # Permalinks
 permalink:      /data/:title/
+
+# Collections
+collections:
+  HAhospital:
+    output: true
+    permalink: /HAHospital/:path/
+
+# Layouts
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: 'page'
+  - scope:
+      path: ''
+      type: 'HAhospital'
+    values:
+      layout: 'HAHosp'
