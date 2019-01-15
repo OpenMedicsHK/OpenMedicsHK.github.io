@@ -85,7 +85,7 @@ function parseDate(dateString){
 	}
       }
       
-      for (var i=0; i < 18; i++){
+      for (var i=0; i < 1; i++){
       
       var itm = document.getElementById("chart-container");
       var clone = itm.cloneNode(true);
