@@ -92,6 +92,8 @@ function parseDate(dateString){
 	}
       }
       
+      console.log(dataMap)
+      
       for (var i=0; i < 3; i++){
       
       var itm = document.getElementById("chart-container");
