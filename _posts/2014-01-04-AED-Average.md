@@ -96,9 +96,7 @@ function parseDate(dateString){
         chart.config.data.datasets[0] = {};
       	chart.config.data.datasets[0].data = dataMap[i];
       	chart.config.data.datasets[0].label = response.rows[0].cellsArray[i+1];  
-      	chart.config.data.datasets[0].type = 'line';
-      	chart.config.data.datasets[0].pointRadius = 0;
-      	chart.config.data.datasets[0].borderWidth = 2;
+      	chart.config.data.datasets[0].type = 'bar';
       chart.config.data.labels = labels;
       
       chart.update();
