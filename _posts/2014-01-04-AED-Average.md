@@ -39,7 +39,7 @@ function parseDate(dateString){
 }
      
       var labels = [];
-      var dataMap = createMatrix(19,96);
+      var dataMap = createMatrix(19,24);
 	
 
 		var ctx = document.getElementById("chart").getContext("2d");
