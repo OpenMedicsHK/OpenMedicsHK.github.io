@@ -35,7 +35,7 @@ level: 第三級
     return matrix;
 }
 function parseDate(dateString){
-	return moment(dateString,'HH:mm','en');
+	return moment(dateString,'H','en');
 }
      
       var labels = [];
