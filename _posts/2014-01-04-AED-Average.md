@@ -61,6 +61,11 @@ function parseDate(dateString){
 		      "animation": false
 		    }
 		  },
+		  
+		    xAxis: {
+			min: moment('0','H','en'),
+			max: moment('24','H','en')
+		    },
 				scales: {
 					xAxes: [{
 						type: 'time',
