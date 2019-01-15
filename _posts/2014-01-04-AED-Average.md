@@ -82,7 +82,7 @@ function parseDate(dateString){
       if (!response.rows){
       	return;
       }
-      for (var i = 1; i < response.rows.length-1; i++) {
+      for (var i = 1; i < response.rows.length; i++) {
       	for (var j=0; j < response.rows[i].cellsArray.length; j++){
 		if (j==0){
         		labels.push(response.rows[i].cellsArray[0]);
