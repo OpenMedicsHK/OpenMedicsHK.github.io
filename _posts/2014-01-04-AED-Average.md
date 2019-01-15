@@ -22,8 +22,6 @@ level: 第三級
 <div id="hidden-charts" style="display: none;">
 	<div id="chart-container" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
 </div>
-
-<table id="statistics" class="table table-condensed table-striped"></table>
   
 <script>  
   //update chart 
@@ -109,7 +107,7 @@ function parseDate(dateString){
 		}
 
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XU_twWgBEorGgzykIcqbmjuBjwZHpV4jTkc1Go1twb0/edit#gid=648626318';
-    $('#statistics').sheetrock({
+    sheetrock({
       url: mySpreadsheet,
       callback: updateChart
     }); 
