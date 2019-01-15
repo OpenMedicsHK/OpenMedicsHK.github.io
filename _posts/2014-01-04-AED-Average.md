@@ -106,7 +106,7 @@ function parseDate(dateString){
       }
 		}
 
-    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1XU_twWgBEorGgzykIcqbmjuBjwZHpV4jTkc1Go1twb0/edit#gid=648626318';
+    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1gMSLNwy160WN4kFq1kwNY1k0gEmwaQ_yfQG4MeXlaa0/edit#gid=0';
     sheetrock({
       url: mySpreadsheet,
       callback: updateChart
