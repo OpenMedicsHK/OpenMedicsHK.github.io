@@ -52,6 +52,15 @@ function parseDate(dateString){
                     display:true,
                     text:'急症科輪候時間 \n Accident and Emergency Department Waiting Time'
                 },
+		  plotOptions: {
+		    "series": {
+		      "pointPadding": 0,
+		      "groupPadding": 0,
+		      "borderWidth": 0,
+		      "shadow": false,
+		      "animation": false
+		    }
+		  },
 				scales: {
 					xAxes: [{
 						type: 'time',
