@@ -112,5 +112,7 @@ function parseDate(dateString){
     $('#statistics').sheetrock({
       url: mySpreadsheet,
       callback: updateChart
-    });  
+    }); 
 </script>
+ 
+{{ site.data.AEDLOG | jsonify }}
