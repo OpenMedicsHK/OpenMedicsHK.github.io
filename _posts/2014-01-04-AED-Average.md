@@ -39,7 +39,7 @@ function parseDate(dateString){
 }
      
       var labels = [];
-      var dataMap = createMatrix(19,24);
+      var dataMap = createMatrix(20,24);
 	
 
 		var ctx = document.getElementById("chart").getContext("2d");
@@ -92,7 +92,7 @@ function parseDate(dateString){
 	}
       }
       
-      for (var i=0; i < 1; i++){
+      for (var i=0; i < 3; i++){
       
       var itm = document.getElementById("chart-container");
       var clone = itm.cloneNode(true);
