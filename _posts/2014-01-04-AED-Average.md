@@ -55,6 +55,9 @@ var cfg = {
         tooltips: {
             enabled: true,
             callbacks: {
+	    		title: function(tooltipItems, data) {
+					return 'TITLE';
+				},
                 label: function(tooltipItems, data) {
                     var sum = 0;
                     return 'Sum: ' + sum;
