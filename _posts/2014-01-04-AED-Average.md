@@ -167,7 +167,7 @@ sheetrock({
     callback: updateChart
 });
 
-$.getJSON( "https://www.ha.org.hk/aedwt/data/aedWtData.json", function( data ) {
+function loadLIVEDATA(data) {
   $.each( data.result.hospData, function( key, val ) {
     var chart = charts[key];
     chart.config.data.datasets[1] = {};
@@ -177,8 +177,9 @@ $.getJSON( "https://www.ha.org.hk/aedwt/data/aedWtData.json", function( data ) {
     chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";    
     items.push( "<li id='" + key + "'>" + val + "</li>" );
   });
-});
+}
 
+$.getJSON('https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json');
 </script>
  
 {{ site.data.AEDLOG | jsonify }}
