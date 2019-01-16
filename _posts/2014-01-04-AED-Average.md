@@ -82,8 +82,6 @@ function updateChart(error, options, response) {
                             offsetGridLines: true
                         },
                         time: {
-                            min: moment('0', 'H', 'en'),
-                            max: moment('24', 'H', 'en'),
                             unit: 'hour',
                             displayFormats: {
                                 hour: 'LT'
@@ -91,8 +89,9 @@ function updateChart(error, options, response) {
                         },
                         stacked: true,
                         categoryPercentage: 1.0,
+                        bounds: 'data',
                         ticks: {
-                            fixedStepSize: 3
+			                source: 'labels'
                         }
                     }],
                     yAxes: [{
