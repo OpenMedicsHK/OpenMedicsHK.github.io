@@ -118,7 +118,7 @@ function updateChart(error, options, response) {
         chart.config.data.datasets = new Array(2);
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
-        chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
+        chart.config.data.datasets[0].label = '平均輪侯時間';
 	chart.config.data.datasets[0].backgroundColor = "rgba(54, 162, 235, 0.2)";
         chart.config.data.datasets[1] = {};
         chart.config.data.datasets[1].data = [];
