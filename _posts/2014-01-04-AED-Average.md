@@ -34,13 +34,8 @@ function createMatrix(N, M) {
     return matrix;
 }
 
-function parseDate(dateString) {
-    return moment(dateString, 'H', 'en');
-}
-
 var labels = [];
 var dataMap = createMatrix(20, 24);
-
 
 var ctx = document.getElementById("chart").getContext("2d");
 var cfg = {
@@ -104,8 +99,6 @@ function updateChart(error, options, response) {
             }
         }
     }
-
-    console.log(dataMap)
 
     for (var i = 0; i < 17; i++) {
 
