@@ -45,7 +45,7 @@ function loadLIVEDATA(data) {
   $.each( data.result.hospData, function( key, val ) {
     if (charts.length <= key)
       return;
-    var chart = charts[key];
+    var chart = charts[val.hospCode];
     chart.data.datasets[1] = {};
     chart.data.datasets[1].data = [];
     chart.data.datasets[1].data[parseInt(moment(val.hospTime).format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
@@ -177,7 +177,7 @@ function updateChart(error, options, response) {
         };
         console.log(chart.config);
         chart.update();
-	charts[i] = chart;
+	charts[hosp] = chart;
 
     }
     
