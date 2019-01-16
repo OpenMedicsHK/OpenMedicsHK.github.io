@@ -117,12 +117,15 @@ function updateChart(error, options, response) {
 
             }
         });
-        chart.config.data = {};
-        chart.config.data.datasets = [];
-        chart.config.data.datasets[0] = {};
-        chart.config.data.datasets[0].data = dataMap[i];
-        chart.config.data.datasets[0].label = '平均輪侯時間';
-	chart.config.data.datasets[0].backgroundColor = "rgba(54, 162, 235, 0.2)";
+        chart.config.data = {
+            datasets: [
+                {
+                    data: dataMap[i],
+                    label: '平均輪侯時間',
+                    backgroundColor: "rgba(54, 162, 235, 0.2)"
+                }
+            ]
+        };
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
             // Pick first xLabel for now
@@ -174,8 +177,7 @@ function loadLIVEDATA(data) {
     chart.config.data.datasets[1].data = [];
     chart.config.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
     chart.config.data.datasets[1].label = '現時輪侯時間'
-    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";    
-    items.push( "<li id='" + key + "'>" + val + "</li>" );
+    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
   });
 }
 $.ajax({
