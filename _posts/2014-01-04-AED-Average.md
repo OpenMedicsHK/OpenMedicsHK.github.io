@@ -68,6 +68,7 @@ function updateChart() {
       $.each( val, function( j , val2 ) {        
         if (i == 0 && j == 'HOD') {
           labels.push(moment(j, 'H', 'en'));
+	  return;
         } else if (j == 'HOD' || j == 'DOW'){
           return;
 	}
@@ -76,7 +77,10 @@ function updateChart() {
         dataMap[j][val.HOD] = val2;
       });    
     });
-
+    
+    console.log(dataMap);
+    console.log(labels);
+    
     $.each( dataMap, function( hosp, history ) {
 
         var itm = document.getElementById("chart-container");
