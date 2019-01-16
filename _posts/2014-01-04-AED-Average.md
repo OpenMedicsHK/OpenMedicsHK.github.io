@@ -61,58 +61,60 @@ function updateChart(error, options, response) {
         clone.id = "clone";
         var newClone = document.getElementById("charts").appendChild(clone);
         var chart = new Chart(newClone.firstChild.getContext("2d"), {
-    type: 'bar',
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        title: {
-            display: true,
-            text: hosp + ' 急症科輪候時間'
-        },
-        tooltips: {
-	        mode: 'x',
-            callbacks: {
-				title: null
-			}
-        },
-        scales: {
-            xAxes: [{
-                type: "time",
-                offsetGridLines: true,
-                time: {
-		    min: moment('0', 'H', 'en'),
-		    max: moment('24', 'H', 'en'),
-                    unit: 'hour',
-                    displayFormats: {
-                        hour: 'LT'
+            type: 'bar',
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: hosp + ' 急症科輪候時間'
+                },
+                tooltips: {
+                    mode: 'x',
+                    callbacks: {
+                        title: null
                     }
                 },
-                stacked: true,
-                categoryPercentage: 1.0,		
-                ticks: {
-                    fixedStepSize: 3
-                }
-            }],
-            yAxes: [{
-                scaleLabel: {
-                    display: true,
-                    labelString: '預計等候時間（小時）'
+                scales: {
+                    xAxes: [{
+                        type: "time",
+                        gridLines: {
+                            offsetGridLines: true
+                        },
+                        time: {
+                            min: moment('0', 'H', 'en'),
+                            max: moment('24', 'H', 'en'),
+                            unit: 'hour',
+                            displayFormats: {
+                                hour: 'LT'
+                            }
+                        },
+                        stacked: true,
+                        categoryPercentage: 1.0,
+                        ticks: {
+                            fixedStepSize: 3
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: '預計等候時間（小時）'
+                        },
+                        stacked: false,
+                        gridLines: {
+                            display: false,
+                        },
+                        ticks: {
+                            min: 0,
+                            max: 8,
+                            fixedStepSize: 2
+                        }
+                    }]
                 },
-		        stacked: false,                
-		        gridLines: {
-		            display:false,
-		        },
-                ticks: {
-                    min: 0,
-                    max: 8,
-                    fixedStepSize: 2
-                }
-            }]
-        },
-	categoryPercentage: 1,
-	
-    }
-});
+                categoryPercentage: 1,
+
+            }
+        });
         chart.config.data = {};
         chart.config.data.datasets = new Array(2);
         chart.config.data.datasets[0] = {};
@@ -121,38 +123,38 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.datasets[1] = {};
         chart.config.data.datasets[1].data = [];
-	chart.config.data.datasets[1].data[14] = 3.4;
+        chart.config.data.datasets[1].data[14] = 3.4;
         chart.config.data.datasets[1].label = '現時輪侯時間'
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
-					// Pick first xLabel for now
-					var title = '';
-					var labels = data.labels;
-					var labelCount = labels ? labels.length : 0;
+            // Pick first xLabel for now
+            var title = '';
+            var labels = data.labels;
+            var labelCount = labels ? labels.length : 0;
 
-					if (tooltipItems.length > 0) {
-						var item = tooltipItems[0];
+            if (tooltipItems.length > 0) {
+                var item = tooltipItems[0];
 
-						if (item.xLabel) {
-							//title = moment(item.xLabel, 'H', 'en').locale('zh_cn').format('LT');
-						} else if (labelCount > 0 && item.index < labelCount) {
-							title = labels[item.index];
-						}
-					}
+                if (item.xLabel) {
+                    //title = moment(item.xLabel, 'H', 'en').locale('zh_cn').format('LT');
+                } else if (labelCount > 0 && item.index < labelCount) {
+                    title = labels[item.index];
+                }
+            }
 
-					return title;
-				};
+            return title;
+        };
         chart.config.options.tooltips.callbacks.label = function(tooltipItem, data) {
-                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+            var label = data.datasets[tooltipItem.datasetIndex].label || '';
 
-                    if (label) {
-                        label += ': ';
-                    }
-                    label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
-                    return label;
-				};
-		console.log(chart.config);
+            if (label) {
+                label += ': ';
+            }
+            label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
+            return label;
+        };
+        console.log(chart.config);
         chart.update();
 
     }
