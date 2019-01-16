@@ -120,7 +120,8 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.datasets[1] = {};
-        chart.config.data.datasets[1].data[14] = [3.4]; 
+        chart.config.data.datasets[1].data = [];
+	chart.config.data.datasets[1].data[14] = 3.4;
         chart.config.data.datasets[1].label = '現時輪侯時間'
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
