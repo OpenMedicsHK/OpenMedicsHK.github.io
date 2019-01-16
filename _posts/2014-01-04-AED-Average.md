@@ -48,11 +48,25 @@ var cfg = {
             text: '急症科輪候時間 \n Accident and Emergency Department Waiting Time'
         },
         tooltips: {
-            callbacks: {	    	
-                label: function(tooltipItem, data) {
-                    return "tooltip!";
-                }
-            }
+            callbacks: {
+		title: function(tooltipItems, data) {
+			// Pick first xLabel for now
+			var title = 'TITLE: ';
+			var labels = data.labels;
+			var labelCount = labels ? labels.length : 0;
+
+			if (tooltipItems.length > 0) {
+				var item = tooltipItems[0];
+
+				if (item.xLabel) {
+					title = item.xLabel;
+				} else if (labelCount > 0 && item.index < labelCount) {
+					title = labels[item.index];
+				}
+			}
+
+			return title;
+		}
         },
         scales: {
             xAxes: [{
