@@ -59,7 +59,7 @@ function parseDate(dateString){
 		      "borderWidth": 0,
 		      "shadow": false,
 		      "animation": false
-		    }
+		    },
 				scales: {
 					xAxes: [{
 						distribution: 'series',
@@ -76,7 +76,7 @@ function parseDate(dateString){
           min: 0,
           max: 8,
           fixedStepSize: 1
-        },
+        }
 					}]
 				}
 			}
