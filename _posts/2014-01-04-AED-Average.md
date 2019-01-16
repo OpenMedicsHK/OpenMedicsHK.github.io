@@ -46,7 +46,7 @@ function updateChart(error, options, response) {
     for (var i = 1; i < response.rows.length; i++) {
         for (var j = 0; j < response.rows[i].cellsArray.length; j++) {
             if (j == 0) {
-                labels.push(response.rows[i].cellsArray[0]);
+                labels.push(moment(response.rows[i].cellsArray[0], 'H', 'en'));
             } else {
                 dataMap[j - 1][i - 1] = response.rows[i].cellsArray[j];
             }
@@ -119,7 +119,7 @@ function updateChart(error, options, response) {
         chart.config.data.datasets = new Array(2);
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
-        chart.config.data.datasets[0].label = moment(response.rows[0].cellsArray[i + 1], 'H', 'en');
+        chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.datasets[1] = {};
         chart.config.data.datasets[1].data = [3];        
