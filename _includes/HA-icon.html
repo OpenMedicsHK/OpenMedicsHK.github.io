@@ -1,9 +1,22 @@
-{% assign abbrev = "" %}
-{% assign words = include.name | upcase | split: " " %}
-{% for w in words %}
-  {% if w != "OF" and w != "AT" and w != "THE" %}
-    {% assign slug = w | slice: 0 %}
-    {% assign abbrev = abbrev | append: slug %}
-  {% endif %}
-{% endfor %}
-<i class="ic-ha-{{ abbrev }}"></i>
+<!-- Accepts any input into include.name and turn them into desired info about a hospital -->
+{% assign output_type = include.output_type | default: "ICON" %}
+{% assign abbrev = include.abbrev | default: "" %}
+{% if abbrev == "" %}
+  {% assign name = include.name | upcase | split: " " %}
+  {% for w in name %}
+    {% if w != "OF" and w != "AT" and w != "THE" %}
+      {% assign slug = w | slice: 0 %}
+      {% assign abbrev = abbrev | append: slug %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if output_type == "ICON" %}
+  <i class="ic-ha-{{ abbrev }}"></i>
+{% endif %}
+{% if output_type == "CHI_NAME" %}
+  {% for hospital in site.HAhospital %}
+    {% if hospital.abbrev == abbrev %}
+      {{ hospital.institution_tc }}
+    {% endif %}
+  {% endfor %}
+{% endif %}
