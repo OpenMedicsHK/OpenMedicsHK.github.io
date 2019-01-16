@@ -48,7 +48,7 @@ var cfg = {
             text: '急症科輪候時間 \n Accident and Emergency Department Waiting Time'
         },
         tooltips: {
-            enabled: true,
+            enabled: false,
             callbacks: {
 		title: function(tooltipItems, data) {
 				return 'TITLE';
