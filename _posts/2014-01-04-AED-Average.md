@@ -68,7 +68,6 @@ function parseDate(dateString){
 		    },
 				scales: {
 					xAxes: [{
-						type: 'time',
 						distribution: 'series',
 						time: {
 							parser: null
