@@ -105,7 +105,7 @@ function updateChart(error, options, response) {
 
     console.log(dataMap)
 
-    for (var i = 0; i < 19; i++) {
+    for (var i = 0; i < 17; i++) {
 
         var itm = document.getElementById("chart-container");
         var clone = itm.cloneNode(true);
