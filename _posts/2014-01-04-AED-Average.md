@@ -70,6 +70,7 @@ function updateChart(error, options, response) {
             text: hosp + ' 急症科輪候時間'
         },
         tooltips: {
+	        mode: 'x',
             callbacks: {
 				title: null
 			}
