@@ -80,7 +80,7 @@ function updateChart(error, options, response) {
                 type: "time",
                 time: {
 		    min: moment('0', 'H', 'en'),
-		    max: moment('24', 'H', 'en')
+		    max: moment('24', 'H', 'en'),
                     unit: 'hour',
                     round: 'hour',
                     displayFormats: {
