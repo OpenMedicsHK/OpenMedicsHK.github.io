@@ -49,24 +49,7 @@ var cfg = {
         },
         tooltips: {
             callbacks: {
-				title: function(tooltipItems, data) {
-					// Pick first xLabel for now
-					var title = 'TITLE: ';
-					var labels = data.labels;
-					var labelCount = labels ? labels.length : 0;
-
-					if (tooltipItems.length > 0) {
-						var item = tooltipItems[0];
-
-						if (item.xLabel) {
-							title = item.xLabel;
-						} else if (labelCount > 0 && item.index < labelCount) {
-							title = labels[item.index];
-						}
-					}
-
-					return title;
-				}
+				title: null
 			}
         },
         scales: {
@@ -119,7 +102,25 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
-	console.log(chart.config);
+		chart.config.options.tooltips.callbacks.label = function(tooltipItems, data) {
+					// Pick first xLabel for now
+					var title = '';
+					var labels = data.labels;
+					var labelCount = labels ? labels.length : 0;
+
+					if (tooltipItems.length > 0) {
+						var item = tooltipItems[0];
+
+						if (item.xLabel) {
+							title = moment(item.xLabel, 'H', 'en');
+						} else if (labelCount > 0 && item.index < labelCount) {
+							title = labels[item.index];
+						}
+					}
+
+					return title;
+				};
+		console.log(chart.config);
         chart.update();
 
     }
