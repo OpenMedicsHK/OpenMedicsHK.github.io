@@ -76,12 +76,12 @@ function parseDate(dateString){
 					yAxes: [{
 						scaleLabel: {
 							display: true,
-							labelString: 'Estimated Waiting Time (hours)'
+							labelString: '預計等候時間（小時）'
 						},
 						ticks: {
           min: 0,
           max: 8,
-          fixedStepSize: 1
+          fixedStepSize: 2
         }
 					}]
 				}
