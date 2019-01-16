@@ -66,8 +66,8 @@ function updateChart() {
       if (parseInt(val.DOW) == 7 && moment().day() != 0)
         return;
       $.each( val, function( j , val2 ) {        
-        if (i == 0 && j == 'HOD') {
-          labels.push(moment(val2, 'H', 'en'));
+        if (i == 0) {
+          labels.push(moment(val.HOD, 'H', 'en'));
 	  return;
         } else if (j == 'HOD' || j == 'DOW'){
           return;
