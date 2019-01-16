@@ -77,7 +77,12 @@ function parseDate(dateString){
 						scaleLabel: {
 							display: true,
 							labelString: 'Estimated Waiting Time (hours)'
-						}
+						},
+						ticks: {
+          min: 0,
+          max: 8,
+          fixedStepSize: 1
+        }
 					}]
 				}
 			}
