@@ -46,11 +46,12 @@ function loadLIVEDATA(data) {
     if (charts.length <= key)
       return;
     var chart = charts[key];
-    chart.config.data.datasets[1] = {};
-    chart.config.data.datasets[1].data = [];
-    chart.config.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
-    chart.config.data.datasets[1].label = '現時輪侯時間'
-    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
+    chart.data.datasets[1] = {};
+    chart.data.datasets[1].data = [];
+    chart.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
+    chart.data.datasets[1].label = '現時輪侯時間'
+    chart.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
+    chart.update();
   });
 }
 
