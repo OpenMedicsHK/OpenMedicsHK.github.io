@@ -38,6 +38,7 @@ var labels = [];
 var dataMap = createMatrix(20, 24);
 
 var ctx = document.getElementById("chart").getContext("2d");
+var charts = [];
 
 function updateChart(error, options, response) {
     if (!response.rows) {
@@ -122,11 +123,6 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].data = dataMap[i];
         chart.config.data.datasets[0].label = '平均輪侯時間';
 	chart.config.data.datasets[0].backgroundColor = "rgba(54, 162, 235, 0.2)";
-        chart.config.data.datasets[1] = {};
-        chart.config.data.datasets[1].data = [];
-        chart.config.data.datasets[1].data[14] = 3.4;
-        chart.config.data.datasets[1].label = '現時輪侯時間'
-	chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
             // Pick first xLabel for now
@@ -160,6 +156,7 @@ function updateChart(error, options, response) {
         };
         console.log(chart.config);
         chart.update();
+	charts.push(chart);
 
     }
 }
@@ -169,6 +166,26 @@ sheetrock({
     url: mySpreadsheet,
     callback: updateChart
 });
+
+$.getJSON( "https://www.ha.org.hk/aedwt/data/aedWtData.json", function( data ) {
+  var items = [];
+  var hospData = data.result.hospData;
+  $.each( hospData, function( key, val ) {
+    var chart = charts[key];
+    chart.config.data.datasets[1] = {};
+    chart.config.data.datasets[1].data = [];
+    chart.config.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
+    chart.config.data.datasets[1].label = '現時輪侯時間'
+    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";    
+    items.push( "<li id='" + key + "'>" + val + "</li>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: items.join( "" )
+  }).appendTo( "body" );
+});
+
 </script>
  
 {{ site.data.AEDLOG | jsonify }}
