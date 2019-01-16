@@ -80,7 +80,8 @@ function updateChart(error, options, response) {
                         type: "time",
                         offset: true,
                         gridLines: {
-                            offsetGridLines: true
+                            offsetGridLines: true,
+                            fixedStepSize: 3
                         },
                         time: {
                             unit: 'hour',
@@ -90,7 +91,7 @@ function updateChart(error, options, response) {
                         categoryPercentage: 1.0,
                         bounds: 'data',
                         ticks: {
-                            fixedStepSize: 3
+			    source: 'data'
                         }
                     }],
                     yAxes: [{
