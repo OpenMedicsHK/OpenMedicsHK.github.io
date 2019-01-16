@@ -78,6 +78,7 @@ function updateChart(error, options, response) {
                 scales: {
                     xAxes: [{
                         type: "time",
+                        offset: true,
                         gridLines: {
                             offsetGridLines: true
                         },
@@ -86,7 +87,7 @@ function updateChart(error, options, response) {
                             displayFormats: {
                                 hour: 'LT'
                             },
-			    stepSize: 3
+                            stepSize: 3
                         },
                         stacked: true,
                         categoryPercentage: 1.0,
