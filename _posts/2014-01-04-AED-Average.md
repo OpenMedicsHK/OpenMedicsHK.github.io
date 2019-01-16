@@ -40,6 +40,18 @@ var dataMap = createMatrix(20, 24);
 var ctx = document.getElementById("chart").getContext("2d");
 var charts = [];
 
+
+function loadLIVEDATA(data) {
+  $.each( data.result.hospData, function( key, val ) {
+    var chart = charts[key];
+    chart.config.data.datasets[1] = {};
+    chart.config.data.datasets[1].data = [];
+    chart.config.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
+    chart.config.data.datasets[1].label = '現時輪侯時間'
+    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
+  });
+}
+
 function updateChart(error, options, response) {
     if (!response.rows) {
         return;
@@ -162,6 +174,15 @@ function updateChart(error, options, response) {
 	charts.push(chart);
 
     }
+    
+	$.ajax({
+	    url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
+	    dataType: "jsonp",
+	    success: function( response ) {
+		loadLIVEDATA( response ); // server response
+	    }
+
+	}); 
 }
 
 var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1gMSLNwy160WN4kFq1kwNY1k0gEmwaQ_yfQG4MeXlaa0/edit#gid=0';
@@ -170,22 +191,4 @@ sheetrock({
     callback: updateChart
 });
 
-function loadLIVEDATA(data) {
-  $.each( data.result.hospData, function( key, val ) {
-    var chart = charts[key];
-    chart.config.data.datasets[1] = {};
-    chart.config.data.datasets[1].data = [];
-    chart.config.data.datasets[1].data[parseInt(moment(val.hospTime, 'en').format('H'))] = parseInt(val.topWait.match(/[0-9]/g)[0]);
-    chart.config.data.datasets[1].label = '現時輪侯時間'
-    chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";
-  });
-}
-$.ajax({
-    url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
-    dataType: "jsonp",
-    success: function( response ) {
-        loadLIVEDATA( response ); // server response
-    }
-
-}); 
 {{ site.data.AEDLOG | jsonify }}
