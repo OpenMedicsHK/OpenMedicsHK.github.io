@@ -146,7 +146,7 @@ function updateChart(error, options, response) {
         chart.config.options.tooltips.callbacks.label = function(tooltipItem, data) {
             var label = data.datasets[tooltipItem.datasetIndex].label || '';
 
-            if (label) {
+            if (label && tooltipItem.yLabel) {
                 label += ': ';
             }
             label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
