@@ -52,20 +52,14 @@ function parseDate(dateString){
                     display:true,
                     text:'急症科輪候時間 \n Accident and Emergency Department Waiting Time'
                 },
-		  plotOptions: {
-		    "series": {
-		      "pointPadding": 0,
-		      "groupPadding": 0,
-		      "borderWidth": 0,
-		      "shadow": false,
-		      "animation": false
-		    }
-		  },
 		  
-		    xAxis: {
-			min: moment('0','H','en'),
-			max: moment('24','H','en')
-		    },
+		 tooltips: {
+        callbacks: {
+            label: function(tooltipItem) {
+                return "等候約 " + Math.round(Number(tooltipItem.yLabel)) + " 小時以上";
+            }
+        }
+    },
 				scales: {
 					xAxes: [{
 						distribution: 'series',
