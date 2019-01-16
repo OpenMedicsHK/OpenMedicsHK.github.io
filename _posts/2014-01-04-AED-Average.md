@@ -80,7 +80,7 @@ function updateChart(error, options, response) {
                 type: 'time',
                 time: {
                     unit: 'hour'
-                }
+                },
                 stacked: true,
                 categoryPercentage: 1.0,		
                 ticks: {
