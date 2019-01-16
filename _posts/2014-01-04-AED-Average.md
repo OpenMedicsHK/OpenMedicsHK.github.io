@@ -35,7 +35,7 @@ function createMatrix(N, M) {
 }
 
 var labels = [];
-var dataMap = createMatrix(20, 24);
+var dataMap = [];
 
 var ctx = document.getElementById("chart").getContext("2d");
 var charts = [];
@@ -71,6 +71,8 @@ function updateChart() {
         } else if (j == 'HOD' || j == 'DOW'){
           return;
 	}
+	if (!dataMap[j])
+	  dataMap[j] = [];
         dataMap[j][val.HOD] = val2;
       });    
     });
