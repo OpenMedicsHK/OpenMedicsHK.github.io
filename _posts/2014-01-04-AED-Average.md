@@ -66,7 +66,10 @@ var cfg = {
         },
         scales: {
             xAxes: [{
-                distribution: 'series',		
+                distribution: 'series',
+				time: {
+					parser: null
+				},
                 ticks: {
                     fixedStepSize: 3
                 }
