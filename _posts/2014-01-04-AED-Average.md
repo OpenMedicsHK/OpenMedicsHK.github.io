@@ -79,7 +79,7 @@ function updateChart() {
     console.log(dataMap);
     console.log(labels);
     
-    $.each( dataMap, function( hosp, history ) {
+    for (var hosp in dataMap) {
 
         var itm = document.getElementById("chart-container");
         var clone = itm.cloneNode(true);
@@ -144,7 +144,7 @@ function updateChart() {
         chart.config.data = {
             datasets: [
                 {
-                    data: history,
+                    data: dataMap[hosp],
                     label: '平均輪侯時間',
                     backgroundColor: "rgba(54, 162, 235, 0.2)"
                 }
@@ -185,7 +185,7 @@ function updateChart() {
         chart.update();
 	    charts[hosp] = chart;
 
-    });
+    }
     
 	$.ajax({
 	    url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
