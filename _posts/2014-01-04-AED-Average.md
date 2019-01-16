@@ -147,12 +147,15 @@ function updateChart(error, options, response) {
             return title;
         };
         chart.config.options.tooltips.callbacks.label = function(tooltipItem, data) {
-            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+            if (!tooltipItem.yLabel)
+	        return;
+	    var label = data.datasets[tooltipItem.datasetIndex].label || '';
 
-            if (label && tooltipItem.yLabel) {
+            if (label) {
                 label += ': ';
-            	label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
             }
+            
+	    label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
             return label;
         };
         console.log(chart.config);
