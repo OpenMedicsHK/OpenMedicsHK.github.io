@@ -53,13 +53,14 @@ function parseDate(dateString){
                     text:'急症科輪候時間 \n Accident and Emergency Department Waiting Time'
                 },
 		  
-		 tooltips: {
-        callbacks: {
-            label: function(tooltipItem) {
-                return "等候約 " + Math.round(Number(tooltipItem.yLabel)) + " 小時以上";
-            }
-        }
-    },
+		 callbacks: {
+						// Use the footer callback to display the sum of the items showing in the tooltip
+						footer: function(tooltipItems, data) {
+							
+							
+							return 'Test tooltip';
+						},
+					},
 				scales: {
 					xAxes: [{
 						distribution: 'series',
