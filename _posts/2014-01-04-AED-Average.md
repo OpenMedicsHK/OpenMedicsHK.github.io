@@ -94,7 +94,7 @@ function updateChart(error, options, response) {
 		        stacked: false,                
 		        gridLines: {
 		            display:false,
-		        }
+		        },
                 ticks: {
                     min: 0,
                     max: 8,
