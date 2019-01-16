@@ -77,7 +77,10 @@ function updateChart(error, options, response) {
         },
         scales: {
             xAxes: [{
-                distribution: 'series',
+                type: 'time',
+                time: {
+                    unit: 'hour'
+                }
                 stacked: true,
                 categoryPercentage: 1.0,		
                 ticks: {
