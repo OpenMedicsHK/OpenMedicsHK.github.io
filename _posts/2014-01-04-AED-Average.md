@@ -66,9 +66,9 @@ var cfg = {
         },
         scales: {
             xAxes: [{
-                distribution: 'series',
-                time: {
-                    parser: null
+                distribution: 'series',		
+                ticks: {
+                    fixedStepSize: 3
                 }
             }],
             yAxes: [{
@@ -117,7 +117,7 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
-
+	console.log(chart.config);
         chart.update();
 
     }
