@@ -178,8 +178,13 @@ function loadLIVEDATA(data) {
     items.push( "<li id='" + key + "'>" + val + "</li>" );
   });
 }
+$.ajax({
+    url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
 
-$.getJSON('https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json');
-</script>
- 
+    dataType: "jsonp",
+    success: function( response ) {
+        console.log( response ); // server response
+    }
+
+}); 
 {{ site.data.AEDLOG | jsonify }}
