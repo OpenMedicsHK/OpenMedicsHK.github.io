@@ -57,13 +57,12 @@ function parseDate(dateString){
 					mode: 'index',
 					callbacks: {
 						// Use the footer callback to display the sum of the items showing in the tooltip
-						footer: function(tooltipItems, data) {
+						: function(tooltipItems, data) {
 							var sum = 0;
 							
 							return 'Sum: ' + sum;
-						},
-					},
-					footerFontStyle: 'normal'
+						}
+					}
 				},
 				scales: {
 					xAxes: [{
