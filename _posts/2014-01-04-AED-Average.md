@@ -90,10 +90,7 @@ function updateChart(error, options, response) {
                 categoryPercentage: 1.0,		
                 ticks: {
                     fixedStepSize: 3
-                },
-		        gridLines: {
-		            display:false,
-		        }
+                }
             }],
             yAxes: [{
                 scaleLabel: {
