@@ -66,6 +66,9 @@ function parseDate(dateString){
 			min: moment('0','H','en'),
 			max: moment('24','H','en')
 		    },
+		    yAxis: {
+		        min: 0
+		    },
 				scales: {
 					xAxes: [{
 						distribution: 'series',
