@@ -78,6 +78,7 @@ function updateChart(error, options, response) {
         scales: {
             xAxes: [{
                 type: "time",
+                offsetGridLines: true,
                 time: {
 		    min: moment('0', 'H', 'en'),
 		    max: moment('24', 'H', 'en'),
