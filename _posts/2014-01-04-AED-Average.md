@@ -99,7 +99,7 @@ function parseDate(dateString){
       
       console.log(dataMap)
       
-      for (var i=0; i < 3; i++){
+      for (var i=0; i < 15; i++){
       
       var itm = document.getElementById("chart-container");
       var clone = itm.cloneNode(true);
