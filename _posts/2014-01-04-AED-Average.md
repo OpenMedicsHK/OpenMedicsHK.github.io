@@ -57,7 +57,7 @@ function parseDate(dateString){
 					mode: 'index',
 					callbacks: {
 						// Use the footer callback to display the sum of the items showing in the tooltip
-						: function(tooltipItems, data) {
+						label : function(tooltipItems, data) {
 							var sum = 0;
 							
 							return 'Sum: ' + sum;
