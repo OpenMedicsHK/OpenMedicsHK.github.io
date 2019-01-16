@@ -85,7 +85,8 @@ function updateChart(error, options, response) {
                             unit: 'hour',
                             displayFormats: {
                                 hour: 'LT'
-                            }
+                            },
+			    stepSize: 3
                         },
                         stacked: true,
                         categoryPercentage: 1.0,
