@@ -65,11 +65,9 @@ function updateChart() {
         return;
       if (parseInt(val.DOW) == 7 && moment().day() != 0)
         return;
-      $.each( val, function( j , val2 ) {        
-        if (i == 0) {
-          labels.push(moment(val.HOD, 'H', 'en'));
-	  return;
-        } else if (j == 'HOD' || j == 'DOW'){
+      labels.push(moment(val.HOD, 'H', 'en'));
+      $.each( val, function( j , val2 ) {
+	if (j == 'HOD' || j == 'DOW'){
           return;
 	}
 	if (!dataMap[j])
