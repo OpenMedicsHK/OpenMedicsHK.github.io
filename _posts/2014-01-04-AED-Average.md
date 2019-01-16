@@ -77,22 +77,24 @@ function updateChart(error, options, response) {
         },
         scales: {
             xAxes: [{
-                type: 'time',
-                time: {
-                    unit: 'hour'
-                },
                 stacked: true,
                 categoryPercentage: 1.0,		
                 ticks: {
                     fixedStepSize: 3
-                }
+                },
+		        gridLines: {
+		            display:false,
+		        }
             }],
             yAxes: [{
                 scaleLabel: {
                     display: true,
                     labelString: '預計等候時間（小時）'
                 },
-		stacked: false,
+		        stacked: false,                
+		        gridLines: {
+		            display:false,
+		        }
                 ticks: {
                     min: 0,
                     max: 8,
