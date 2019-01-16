@@ -180,10 +180,9 @@ function loadLIVEDATA(data) {
 }
 $.ajax({
     url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
-
     dataType: "jsonp",
     success: function( response ) {
-        console.log( response ); // server response
+        loadLIVEDATA( response ); // server response
     }
 
 }); 
