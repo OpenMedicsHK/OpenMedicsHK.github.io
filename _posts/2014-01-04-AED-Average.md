@@ -84,16 +84,14 @@ function updateChart(error, options, response) {
                         },
                         time: {
                             unit: 'hour',
-                            displayFormats: {
-                                hour: 'LT'
-                            },
                             stepSize: 3
                         },
                         stacked: true,
                         categoryPercentage: 1.0,
                         bounds: 'data',
                         ticks: {
-			                source: 'labels'
+			                source: 'labels',
+                            fixedStepSize: 3
                         }
                     }],
                     yAxes: [{
