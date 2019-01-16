@@ -77,6 +77,14 @@ function updateChart(error, options, response) {
         },
         scales: {
             xAxes: [{
+                type: "time",
+                time: {
+                    unit: 'hour',
+                    round: 'hour',
+                    displayFormats: {
+                        hour: 'H'
+                    }
+                },
                 stacked: true,
                 categoryPercentage: 1.0,		
                 ticks: {
@@ -110,11 +118,11 @@ function updateChart(error, options, response) {
         chart.config.data.datasets = new Array(2);
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
-        chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
+        chart.config.data.datasets[0].label = moment(response.rows[0].cellsArray[i + 1], 'H', 'en');
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.datasets[1] = {};
         chart.config.data.datasets[1].data = [3];        
-        chart.config.data.datasets[1].label = ['14'];
+        chart.config.data.datasets[1].label = [moment('14', 'H', 'en')];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
@@ -127,7 +135,7 @@ function updateChart(error, options, response) {
 						var item = tooltipItems[0];
 
 						if (item.xLabel) {
-							title = moment(item.xLabel, 'H', 'en').locale('zh_cn').format('LT');
+							//title = moment(item.xLabel, 'H', 'en').locale('zh_cn').format('LT');
 						} else if (labelCount > 0 && item.index < labelCount) {
 							title = labels[item.index];
 						}
