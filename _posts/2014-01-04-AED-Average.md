@@ -77,6 +77,7 @@ function updateChart(error, options, response) {
         scales: {
             xAxes: [{
                 distribution: 'series',
+		stacked: true,
                 ticks: {
                     fixedStepSize: 3
                 }
@@ -86,13 +87,16 @@ function updateChart(error, options, response) {
                     display: true,
                     labelString: '預計等候時間（小時）'
                 },
+		stacked: false,
                 ticks: {
                     min: 0,
                     max: 8,
                     fixedStepSize: 2
                 }
             }]
-        }
+        },
+	categoryPercentage: 1,
+	
     }
 });
         chart.config.data = {};
