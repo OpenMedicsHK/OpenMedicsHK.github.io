@@ -38,14 +38,36 @@ var labels = [];
 var dataMap = createMatrix(20, 24);
 
 var ctx = document.getElementById("chart").getContext("2d");
-var cfg = {
+
+function updateChart(error, options, response) {
+    if (!response.rows) {
+        return;
+    }
+    for (var i = 1; i < response.rows.length; i++) {
+        for (var j = 0; j < response.rows[i].cellsArray.length; j++) {
+            if (j == 0) {
+                labels.push(response.rows[i].cellsArray[0]);
+            } else {
+                dataMap[j - 1][i - 1] = response.rows[i].cellsArray[j];
+            }
+        }
+    }
+
+    for (var i = 0; i < 17; i++) {
+        var hosp = response.rows[0].cellsArray[i + 1];
+
+        var itm = document.getElementById("chart-container");
+        var clone = itm.cloneNode(true);
+        clone.id = "clone";
+        var newClone = document.getElementById("charts").appendChild(clone);
+        var chart = new Chart(newClone.firstChild.getContext("2d"), {
     type: 'bar',
     options: {
         responsive: true,
         maintainAspectRatio: false,
         title: {
             display: true,
-            text: '急症科輪候時間 \n Accident and Emergency Department Waiting Time'
+            text: hosp + ' 急症科輪候時間'
         },
         tooltips: {
             callbacks: {
@@ -72,34 +94,16 @@ var cfg = {
             }]
         }
     }
-};
-
-function updateChart(error, options, response) {
-    if (!response.rows) {
-        return;
-    }
-    for (var i = 1; i < response.rows.length; i++) {
-        for (var j = 0; j < response.rows[i].cellsArray.length; j++) {
-            if (j == 0) {
-                labels.push(response.rows[i].cellsArray[0]);
-            } else {
-                dataMap[j - 1][i - 1] = response.rows[i].cellsArray[j];
-            }
-        }
-    }
-
-    for (var i = 0; i < 17; i++) {
-
-        var itm = document.getElementById("chart-container");
-        var clone = itm.cloneNode(true);
-        clone.id = "clone";
-        var newClone = document.getElementById("charts").appendChild(clone);
-        var chart = new Chart(newClone.firstChild.getContext("2d"), JSON.parse(JSON.stringify(cfg)));
+});
         chart.config.data = {};
-        chart.config.data.datasets = new Array(1);
+        chart.config.data.datasets = new Array(2);
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
+        chart.config.data.datasets[0].type = 'bar';
+        chart.config.data.datasets[1] = {};
+        chart.config.data.datasets[1].data = [3];        
+        chart.config.data.datasets[1].label = ['14'];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
