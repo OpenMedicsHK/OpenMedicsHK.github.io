@@ -120,12 +120,12 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
-        chart.config.data.datasets[0].type = 'bar';
+	chart.config.data.datasets[0].backgroundColor = ["rgba(54, 162, 235, 0.2)"];
         chart.config.data.datasets[1] = {};
         chart.config.data.datasets[1].data = [];
         chart.config.data.datasets[1].data[14] = 3.4;
         chart.config.data.datasets[1].label = '現時輪侯時間'
-        chart.config.data.datasets[0].type = 'bar';
+	chart.config.data.datasets[1].backgroundColor = rgba(255, 99, 132, 0.2);
         chart.config.data.labels = labels;
         chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
             // Pick first xLabel for now
