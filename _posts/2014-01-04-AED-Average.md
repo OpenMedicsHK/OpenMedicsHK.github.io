@@ -67,7 +67,7 @@ function updateChart() {
         return;
       $.each( val, function( j , val2 ) {        
         if (i == 0 && j == 'HOD') {
-          labels.push(moment(j, 'H', 'en'));
+          labels.push(moment(val2, 'H', 'en'));
 	  return;
         } else if (j == 'HOD' || j == 'DOW'){
           return;
