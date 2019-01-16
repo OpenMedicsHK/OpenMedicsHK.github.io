@@ -78,7 +78,7 @@ function updateChart(error, options, response) {
             xAxes: [{
                 distribution: 'series',
                 stacked: true,
-                barPercentage: 1.0,
+                categoryPercentage: 1.0,		
                 ticks: {
                     fixedStepSize: 3
                 }
