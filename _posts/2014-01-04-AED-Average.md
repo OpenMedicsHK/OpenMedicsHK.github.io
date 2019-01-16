@@ -168,9 +168,7 @@ sheetrock({
 });
 
 $.getJSON( "https://www.ha.org.hk/aedwt/data/aedWtData.json", function( data ) {
-  var items = [];
-  var hospData = data.result.hospData;
-  $.each( hospData, function( key, val ) {
+  $.each( data.result.hospData, function( key, val ) {
     var chart = charts[key];
     chart.config.data.datasets[1] = {};
     chart.config.data.datasets[1].data = [];
@@ -179,11 +177,6 @@ $.getJSON( "https://www.ha.org.hk/aedwt/data/aedWtData.json", function( data ) {
     chart.config.data.datasets[1].backgroundColor = "rgba(255, 99, 132, 0.2)";    
     items.push( "<li id='" + key + "'>" + val + "</li>" );
   });
- 
-  $( "<ul/>", {
-    "class": "my-new-list",
-    html: items.join( "" )
-  }).appendTo( "body" );
 });
 
 </script>
