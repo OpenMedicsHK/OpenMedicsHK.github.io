@@ -118,7 +118,7 @@ function updateChart(error, options, response) {
             }
         });
         chart.config.data = {};
-        chart.config.data.datasets = new Array(2);
+        chart.config.data.datasets = [];
         chart.config.data.datasets[0] = {};
         chart.config.data.datasets[0].data = dataMap[i];
         chart.config.data.datasets[0].label = '平均輪侯時間';
