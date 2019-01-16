@@ -90,7 +90,6 @@ function updateChart(error, options, response) {
                         categoryPercentage: 1.0,
                         bounds: 'data',
                         ticks: {
-			                source: 'labels',
                             fixedStepSize: 3
                         }
                     }],
