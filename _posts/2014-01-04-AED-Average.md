@@ -65,18 +65,17 @@ function updateChart() {
         return;
       if (parseInt(val.DOW) == 7 && moment().day() != 0)
         return;
-      $.each( val, function( j , val2 ) {
-        if (j == 'HOD' || j == 'DOW')
+      $.each( val, function( j , val2 ) {        
+        if (i == 0 && j == 'HOD') {
+          labels.push(moment(j, 'H', 'en'));
+        } else if (j == 'HOD' || j == 'DOW'){
           return;
-        if (i == 0) {
-            labels.push(moment(j, 'H', 'en'));
-        }
+	}
         dataMap[j][val.HOD] = val2;
       });    
     });
 
     $.each( dataMap, function( hosp, history ) {
-        var hosp = response.rows[0].cellsArray[i + 1];
 
         var itm = document.getElementById("chart-container");
         var clone = itm.cloneNode(true);
