@@ -148,8 +148,8 @@ function updateChart(error, options, response) {
 
             if (label && tooltipItem.yLabel) {
                 label += ': ';
+            	label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
             }
-            label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
             return label;
         };
         console.log(chart.config);
