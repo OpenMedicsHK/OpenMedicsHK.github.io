@@ -55,21 +55,23 @@ var cfg = {
         tooltips: {
             enabled: true,
             callbacks: {
-	    		title: function(tooltipItems, data) {
-					return 'TITLE';
-				},
+		title: function(tooltipItems, data) {
+				return 'TITLE';
+			},
                 label: function(tooltipItems, data) {
-                    var sum = 0;
-                    return 'Sum: ' + sum;
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += Math.round(tooltipItem.yLabel * 100) / 100;
+                    return label;
                 }
             }
         },
         scales: {
             xAxes: [{
                 distribution: 'series',
-				time: {
-					parser: null
-				},
                 ticks: {
                     fixedStepSize: 3
                 }
@@ -112,7 +114,6 @@ function updateChart(error, options, response) {
         clone.id = "clone";
         var newClone = document.getElementById("charts").appendChild(clone);
         var chart = new Chart(newClone.firstChild.getContext("2d"), JSON.parse(JSON.stringify(cfg)));
-        chart.config.options.scales.xAxes[0].time.parser = parseDate;
         chart.config.data = {};
         chart.config.data.datasets = new Array(1);
         chart.config.data.datasets[0] = {};
