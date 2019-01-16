@@ -82,9 +82,8 @@ function updateChart(error, options, response) {
 		    min: moment('0', 'H', 'en'),
 		    max: moment('24', 'H', 'en'),
                     unit: 'hour',
-                    round: 'hour',
                     displayFormats: {
-                        hour: 'H'
+                        hour: 'LT'
                     }
                 },
                 stacked: true,
