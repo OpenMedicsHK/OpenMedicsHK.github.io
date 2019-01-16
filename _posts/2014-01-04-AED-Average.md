@@ -58,21 +58,24 @@ function loadLIVEDATA(data) {
   });
 }
 
-function updateChart(error, options, response) {
-    if (!response.rows) {
+function updateChart() {
+    var data = {{ site.data.AEDLOG | jsonify }};
+    $.each( data, function( i , val ) {
+      if (parseInt(val.DOW) != moment(now).day())
         return;
-    }
-    for (var i = 1; i < response.rows.length; i++) {
-        for (var j = 0; j < response.rows[i].cellsArray.length; j++) {
-            if (j == 0) {
-                labels.push(moment(response.rows[i].cellsArray[0], 'H', 'en'));
-            } else {
-                dataMap[j - 1][i - 1] = response.rows[i].cellsArray[j];
-            }
+      if (parseInt(val.DOW) == 7 && moment(now).day() != 0)
+        return;
+      $.each( val, function( j , val2 ) {
+        if (j == 'HOD' || j == 'DOW')
+          return;
+        if (i == 0) {
+            labels.push(moment(j, 'H', 'en'));
         }
-    }
+        dataMap[j][val.HOD] = val2;
+      });    
+    });
 
-    for (var i = 0; i < 17; i++) {
+    $.each( dataMap, function( hosp, history ) {
         var hosp = response.rows[0].cellsArray[i + 1];
 
         var itm = document.getElementById("chart-container");
@@ -138,7 +141,7 @@ function updateChart(error, options, response) {
         chart.config.data = {
             datasets: [
                 {
-                    data: dataMap[i],
+                    data: history,
                     label: '平均輪侯時間',
                     backgroundColor: "rgba(54, 162, 235, 0.2)"
                 }
@@ -177,7 +180,7 @@ function updateChart(error, options, response) {
         };
         console.log(chart.config);
         chart.update();
-	charts[hosp] = chart;
+	    charts[hosp] = chart;
 
     }
     
@@ -196,5 +199,3 @@ sheetrock({
     url: mySpreadsheet,
     callback: updateChart
 });
-
-{{ site.data.AEDLOG | jsonify }}
