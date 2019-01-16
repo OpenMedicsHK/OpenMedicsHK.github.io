@@ -80,7 +80,7 @@ function updateChart(error, options, response) {
                         type: "time",
                         offset: true,
                         gridLines: {
-                            offsetGridLines: true,
+			    display: false,
                         },
                         time: {
                             unit: 'hour',
@@ -90,8 +90,7 @@ function updateChart(error, options, response) {
                         categoryPercentage: 1.0,
                         bounds: 'data',
                         ticks: {
-			    source: 'data',
-                            fixedStepSize: 3
+			    source: 'labels'
                         }
                     }],
                     yAxes: [{
@@ -136,7 +135,7 @@ function updateChart(error, options, response) {
                 var item = tooltipItems[0];
 
                 if (item.xLabel) {
-                    //title = moment(item.xLabel, 'H', 'en').locale('zh_cn').format('LT');
+                    title = moment(item.xLabel).locale('zh_cn').format('A h時');
                 } else if (labelCount > 0 && item.index < labelCount) {
                     title = labels[item.index];
                 }
