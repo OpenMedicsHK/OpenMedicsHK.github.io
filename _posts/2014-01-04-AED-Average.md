@@ -182,7 +182,7 @@ function updateChart() {
         chart.update();
 	    charts[hosp] = chart;
 
-    }
+    });
     
 	$.ajax({
 	    url: "https://jsonp.afeld.me/?callback=loadLIVEDATA&url=https://www.ha.org.hk/aedwt/data/aedWtData.json",
