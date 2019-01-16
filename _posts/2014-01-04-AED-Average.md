@@ -112,7 +112,7 @@ function updateChart(error, options, response) {
 						var item = tooltipItems[0];
 
 						if (item.xLabel) {
-							title = moment(item.xLabel, 'H', 'en');
+							title = moment(item.xLabel, 'H', 'en').format('LT');
 						} else if (labelCount > 0 && item.index < labelCount) {
 							title = labels[item.index];
 						}
