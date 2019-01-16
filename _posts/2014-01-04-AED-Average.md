@@ -72,7 +72,7 @@ function updateChart(error, options, response) {
         }
     }
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 17; i++) {
         var hosp = response.rows[0].cellsArray[i + 1];
 
         var itm = document.getElementById("chart-container");
