@@ -43,6 +43,8 @@ var charts = [];
 
 function loadLIVEDATA(data) {
   $.each( data.result.hospData, function( key, val ) {
+    if charts.length <= key
+      return;
     var chart = charts[key];
     chart.config.data.datasets[1] = {};
     chart.config.data.datasets[1].data = [];
