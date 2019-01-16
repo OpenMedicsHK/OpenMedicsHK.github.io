@@ -102,7 +102,7 @@ function updateChart(error, options, response) {
         chart.config.data.datasets[0].label = response.rows[0].cellsArray[i + 1];
         chart.config.data.datasets[0].type = 'bar';
         chart.config.data.labels = labels;
-		chart.config.options.tooltips.callbacks.label = function(tooltipItems, data) {
+		chart.config.options.tooltips.callbacks.title = function(tooltipItems, data) {
 					// Pick first xLabel for now
 					var title = '';
 					var labels = data.labels;
@@ -119,6 +119,15 @@ function updateChart(error, options, response) {
 					}
 
 					return title;
+				};
+		chart.config.options.tooltips.callbacks.label = function(tooltipItems, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
+                    return label;
 				};
 		console.log(chart.config);
         chart.update();
