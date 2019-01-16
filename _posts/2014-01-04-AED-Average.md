@@ -84,7 +84,10 @@ function updateChart(error, options, response) {
                         },
                         time: {
                             unit: 'hour',
-                            stepSize: 3
+                            stepSize: 3,
+			    displayFormats: {
+			    	hour: 'A h時'
+			    }
                         },
                         stacked: true,
                         categoryPercentage: 1.0,
