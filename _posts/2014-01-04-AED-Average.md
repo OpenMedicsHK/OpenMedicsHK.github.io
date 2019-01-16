@@ -194,8 +194,4 @@ function updateChart() {
 	}); 
 }
 
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1gMSLNwy160WN4kFq1kwNY1k0gEmwaQ_yfQG4MeXlaa0/edit#gid=0';
-sheetrock({
-    url: mySpreadsheet,
-    callback: updateChart
-});
+updateChart();
