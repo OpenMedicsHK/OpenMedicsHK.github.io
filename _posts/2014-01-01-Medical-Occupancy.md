@@ -37,7 +37,7 @@ level: 第一級
       labels.splice(0,1);
       for (var j in labels)
         matrixData.datasets[j] = {
-          label: labels[j],
+          label: labels[length.data-j-1],
           data: []
         };
     }else{
