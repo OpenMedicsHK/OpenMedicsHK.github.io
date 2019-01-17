@@ -94,8 +94,7 @@ function updateChart() {
                 responsive: true,
                 maintainAspectRatio: false,
                 title: {
-                    display: true,
-                    text: hosp + ' 急症科輪候時間'
+                    display: false
                 },
                 tooltips: {
                     mode: 'x',
