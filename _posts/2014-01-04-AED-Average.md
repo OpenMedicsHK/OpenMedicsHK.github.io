@@ -25,6 +25,7 @@ level: 第三級
 <div id="charts">
 	{% for hospital in site.HAhospital %}
 	{% if hospital.with_AE_service_eng == true %}
+		<h2>{% include HA-icon.html name=hospital.institution_eng %}  {{ hospital.institution_tc }}</h2>
 		<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
 	{% endif %}
 	{% endfor %}
