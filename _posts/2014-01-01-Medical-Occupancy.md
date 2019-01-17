@@ -43,12 +43,12 @@ level: 第一級
     }else{
       matrixData.labels.push(data[i][0]);
       for (var j in data[i]){
-        var index = data[i].length-j;
         if (j==0)
           continue;
-        matrixData.datasets[index-1].data[i-1] = parseInt(data[i][index].match(/([0-9]*)/g)[0]);
-        if (!matrixData.datasets[index-1].data[i-1])
-          matrixData.datasets[index-1].data[i-1] = 0;
+        var index = data.length-i-1;
+        matrixData.datasets[j-1].data[i-1] = parseInt(data[index][j].match(/([0-9]*)/g)[0]);
+        if (!matrixData.datasets[j-1].data[i-1])
+          matrixData.datasets[j-1].data[i-1] = 0;
       }
     }
       if (i > 60) // too many entries already
