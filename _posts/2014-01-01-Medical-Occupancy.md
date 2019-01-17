@@ -41,7 +41,7 @@ level: 第一級
           data: []
         };
     }else{
-      var index = data.length-i-1;
+      var index = data.length-i;
       matrixData.labels.push(data[index][0]);
       for (var j in data[i]){
         if (j==0)
