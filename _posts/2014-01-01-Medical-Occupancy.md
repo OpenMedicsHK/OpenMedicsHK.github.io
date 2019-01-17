@@ -43,7 +43,7 @@ level: 第一級
     }else{
       matrixData.labels.push(data[i][0]);
       for (var j in data[i]){
-        var index = data[i].length-j-1;
+        var index = data[i].length-j;
         if (j==0)
           continue;
         matrixData.datasets[index-1].data[i-1] = parseInt(data[i][index].match(/([0-9]*)/g)[0]);
