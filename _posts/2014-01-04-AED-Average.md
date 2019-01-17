@@ -82,12 +82,11 @@ function updateChart() {
     
     console.log(dataMap);
     console.log(labels);
-    
-    for (itm in document.getElementsByName("chart-container")) {
+    var nodes = document.getElementsByName("chart-container");
+    for (var i in nodes) {
 
-        console.log(itm);
-	var hosp = itm.getAttributeNode("hosp").value;
-        var chart = new Chart(itm.firstChild.getContext("2d"), {
+	var hosp = nodes[i].getAttribute("hosp");
+        var chart = new Chart(nodes[i].firstChild.getContext("2d"), {
             type: 'bar',
             options: {
                 responsive: true,
