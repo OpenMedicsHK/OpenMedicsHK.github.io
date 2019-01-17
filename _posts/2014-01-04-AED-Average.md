@@ -83,7 +83,7 @@ function updateChart() {
     console.log(dataMap);
     console.log(labels);
     
-    for (var itm in document.getElementsByName("chart-container")) {
+    for (itm in document.getElementsByName("chart-container")) {
 
         var hosp = itm.getAttribute("hosp");
         var chart = new Chart(itm.firstChild.getContext("2d"), {
