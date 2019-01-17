@@ -23,8 +23,10 @@ level: 第三級
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 
 <div id="charts">
+<div class="row">
 	{% assign clusters = site.HAhospital | map: 'cluster_tc' | uniq %}
 	{% for cluster in clusters %}
+  	<div class="col-4 col-12-medium">
 		<h2>{{ cluster }}</h2>
 		{% for hospital in site.HAhospital %}
 			{% if hospital.with_AE_service_eng == true and hospital.cluster_tc == cluster %}
@@ -32,7 +34,9 @@ level: 第三級
 				<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
 			{% endif %}
 		{% endfor %}
+	</div>
 	{% endfor %}
+</div>
 </div>
 <script>  
 function createMatrix(N, M) {
