@@ -24,7 +24,7 @@ level: 第三級
 
 <div id="charts">
 	{% for hospital in site.HAhospital %}
-	{% if hospital.with_AE_service_eng == "true" %}
+	{% if hospital.with_AE_service_eng == true %}
 		<div id="chart" hosp="{{ hospital.abbrev }}"></div>
 	{% endif %}
 	{% endfor %}
