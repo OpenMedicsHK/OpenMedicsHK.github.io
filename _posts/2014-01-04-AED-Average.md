@@ -25,10 +25,10 @@ level: 第三級
 <div id="charts">
 	{% assign clusters = site.HAhospital | map: 'cluster_tc' | uniq %}
 	{% for cluster in clusters %}
-		{{ cluster }}
+		<h2>{{ cluster }}</h2>
 		{% for hospital in site.HAhospital %}
 			{% if hospital.with_AE_service_eng == true and hospital.cluster_tc == cluster %}
-				<h2>{% include HA-icon.html name=hospital.institution_eng %}  {{ hospital.institution_tc }}</h2>
+				<h3>{% include HA-icon.html name=hospital.institution_eng %}  {{ hospital.institution_tc }}</h3>
 				<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
 			{% endif %}
 		{% endfor %}
