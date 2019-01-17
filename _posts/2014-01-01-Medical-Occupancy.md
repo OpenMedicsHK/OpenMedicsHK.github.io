@@ -35,8 +35,10 @@ level: 第一級
       var labels = data[i];
       labels.splice(0,1);
       for (var j in labels)
-        matrixData.datasets[j].label = labels[j];
-        matrixData.datasets[j].data = [];
+        matrixData.datasets[j] = {
+          label: labels[j],
+          data: []
+        };
     }else{
       matrixData.labels.push(data[i][0]);
       for (var j in data[i]){
