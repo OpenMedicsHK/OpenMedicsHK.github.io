@@ -23,6 +23,11 @@ level: 第三級
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 
 <div id="charts">
+	{% for hospital in site.HAhospital %}
+	{% if hospital.with_AE_service_eng == "true" %}
+		<div id="chart" hosp="{{ hospital.abbrev }}"></div>
+	{% endif %}
+	{% endfor %}
 </div>
 <div id="hidden-charts" style="display: none;">
 	<div id="chart-container" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
