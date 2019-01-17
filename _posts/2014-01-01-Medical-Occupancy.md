@@ -61,7 +61,7 @@ level: 第一級
     labelScale: 0.6,
     rounded: true,
     colors: [ "rgba(220,220,220,0.9)", "rgba(83,28,35,0.9)", "rgba(216,11,39,0.9)"],
-    labelFontColor: "rgba(225,225,225,1.0)",
+    labelFontColor: "rgba(250,250,250,1.0)",
     options: {
       scales: {
         xAxes:[{ position: 'top' }]
