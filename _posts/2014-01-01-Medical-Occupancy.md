@@ -8,8 +8,9 @@ level: 第一級
 ---
 
 <script src='https://tmroyal.github.io/Chart.HeatMap/Chart.HeatMap.S.min.js'></script>
-
-<canvas id="container" style="min-width: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 10 | plus: 150 }}px; min-height: 440px; max-height: 660px; margin: 0 auto"></canvas>
+<div style="height: 660px; width: 100%; overflow-x: scroll;">
+  <canvas id="container" style="min-width: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 20 | plus: 150 }}px; min-height: 440px; max-height: 660px; margin: 0 auto"></canvas>
+</div>
 
 
 [原始數據](https://docs.google.com/spreadsheets/d/e/2PACX-1vRpbqc-2MwM-s9JtgXKFbfNmNOaTkve2rPmUxZvMoiJdYTJENStLX1W6i47mb-RURj3Or2oXRjPLhgD/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false)
@@ -42,11 +43,12 @@ level: 第一級
     }else{
       matrixData.labels.push(data[i][0]);
       for (var j in data[i]){
+        var index = data[i].length-j-1;
         if (j==0)
           continue;
-        matrixData.datasets[j-1].data[i-1] = parseInt(data[i][j].match(/([0-9]*)/g)[0]);
-        if (!matrixData.datasets[j-1].data[i-1])
-          matrixData.datasets[j-1].data[i-1] = 0;
+        matrixData.datasets[index-1].data[i-1] = parseInt(data[i][index].match(/([0-9]*)/g)[0]);
+        if (!matrixData.datasets[index-1].data[i-1])
+          matrixData.datasets[index-1].data[i-1] = 0;
       }
     }
       if (i > 60) // too many entries already
