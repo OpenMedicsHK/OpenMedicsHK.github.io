@@ -129,7 +129,7 @@ function updateChart() {
                     yAxes: [{
                         scaleLabel: {
                             display: true,
-                            labelString: '預計等候時間（小時）'
+                            labelString: '最長等候時間（小時）'
                         },
                         stacked: false,
                         gridLines: {
@@ -150,7 +150,7 @@ function updateChart() {
             datasets: [
                 {
                     data: dataMap[hosp],
-                    label: '平均輪侯時間',
+                    label: '平均最長輪侯時間',
                     backgroundColor: "rgba(54, 162, 235, 0.2)"
                 }
             ]
@@ -183,7 +183,7 @@ function updateChart() {
                 label += ': ';
             }
             
-	    label += '約等候 ' + Math.round(tooltipItem.yLabel) + '小時';
+	    label += '等候超過 ' + Math.round(tooltipItem.yLabel) + '小時';
             return label;
         };
         console.log(chart.config);
