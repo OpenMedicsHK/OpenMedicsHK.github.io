@@ -7,7 +7,7 @@ img: pic01.jpg
 level: 第一級
 ---
 
-<script src='http://tmroyal.github.io/Chart.HeatMap/Chart.HeatMap.S.min.js'></script>
+<script src='https://tmroyal.github.io/Chart.HeatMap/Chart.HeatMap.S.min.js'></script>
 
 <canva id="container" style="min-height: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 29 | plus: 150 }}px; min-width: 440px; max-width: 880px; margin: 0 auto"></canva>
 
