@@ -37,15 +37,15 @@ level: 第一級
       labels.splice(0,1);
       for (var j in labels)
         matrixData.datasets[j] = {
-          label: labels[labels.length-j-1],
+          label: labels[j],
           data: []
         };
     }else{
-      matrixData.labels.push(data[i][0]);
+      var index = data.length-i-1;
+      matrixData.labels.push(data[index][0]);
       for (var j in data[i]){
         if (j==0)
           continue;
-        var index = data.length-i-1;
         matrixData.datasets[j-1].data[i-1] = parseInt(data[index][j].match(/([0-9]*)/g)[0]);
         if (!matrixData.datasets[j-1].data[i-1])
           matrixData.datasets[j-1].data[i-1] = 0;
