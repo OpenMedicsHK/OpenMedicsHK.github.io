@@ -23,11 +23,15 @@ level: 第三級
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 
 <div id="charts">
-	{% for hospital in site.HAhospital %}
-	{% if hospital.with_AE_service_eng == true %}
-		<h2>{% include HA-icon.html name=hospital.institution_eng %}  {{ hospital.institution_tc }}</h2>
-		<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
-	{% endif %}
+	{% assign clusters = site.HAhospital | map: 'cluster_tc' | uniq %}
+	{% for cluster in clusters %}
+		{{ cluster }}
+		{% for hospital in site.HAhospital %}
+			{% if hospital.with_AE_service_eng == true and hospital.cluster_tc == cluster %}
+				<h2>{% include HA-icon.html name=hospital.institution_eng %}  {{ hospital.institution_tc }}</h2>
+				<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
+			{% endif %}
+		{% endfor %}
 	{% endfor %}
 </div>
 <script>  
