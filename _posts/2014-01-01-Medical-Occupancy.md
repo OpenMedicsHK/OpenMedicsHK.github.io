@@ -9,7 +9,7 @@ level: 第一級
 
 <script src='https://tmroyal.github.io/Chart.HeatMap/Chart.HeatMap.S.min.js'></script>
 
-<canva id="container" style="min-height: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 29 | plus: 150 }}px; min-width: 440px; max-width: 880px; margin: 0 auto"></canva>
+<canvas id="container" style="min-height: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 29 | plus: 150 }}px; min-width: 440px; max-width: 880px; margin: 0 auto"></canvas>
 
 
 [原始數據](https://docs.google.com/spreadsheets/d/e/2PACX-1vRpbqc-2MwM-s9JtgXKFbfNmNOaTkve2rPmUxZvMoiJdYTJENStLX1W6i47mb-RURj3Or2oXRjPLhgD/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false)
