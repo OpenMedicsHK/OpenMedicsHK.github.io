@@ -46,6 +46,8 @@ level: 第一級
         data: occupancies
       })
       console.log(occupancies);
+      if (j > 60) // too many entries already
+        break;  //abort
     }
       
   }
