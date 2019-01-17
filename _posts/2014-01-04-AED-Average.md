@@ -85,7 +85,8 @@ function updateChart() {
     
     for (itm in document.getElementsByName("chart-container")) {
 
-        var hosp = itm.getAttributeNode("hosp").value;
+        console.log(itm);
+	var hosp = itm.getAttributeNode("hosp").value;
         var chart = new Chart(itm.firstChild.getContext("2d"), {
             type: 'bar',
             options: {
