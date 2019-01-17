@@ -8,7 +8,7 @@ level: 第一級
 ---
 
 <script src='https://tmroyal.github.io/Chart.HeatMap/Chart.HeatMap.S.min.js'></script>
-<div style="height: 440px; width: 100%; overflow-x: scroll;">
+<div style="height: 800px; width: 100%; overflow-x: scroll;">
   <canvas id="container" style="min-width: {{ site.data.MEDOCCUPANCY | size | minus: 1 | times: 20 | plus: 150 }}px; max-height: 440px; margin: 0 auto"></canvas>
 </div>
 
