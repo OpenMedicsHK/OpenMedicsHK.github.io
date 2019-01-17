@@ -60,7 +60,8 @@ level: 第一級
     responsive: false,
     labelScale: 0.6,
     rounded: true,
-    colors: [ "rgba(220,220,220,0.9)", "rgba(246,84,106,0.9)", "rgba(147,50,63,0.9)"],
+    colors: [ "rgba(220,220,220,0.9)", "rgba(250,157,169,0.9)", "rgba(147,50,63,0.9)"],
+    labelFontColor: "rgba(225,225,225,0.8)",
     options: {
       scales: {
         xAxes:[{ position: 'top' }]
