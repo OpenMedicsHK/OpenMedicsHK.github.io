@@ -84,7 +84,7 @@ function updateChart() {
     console.log(dataMap);
     console.log(labels);
     var nodes = document.getElementsByName("chart-container");
-    for (var i in nodes) {    
+    for (i = 0; i < nodes.length; i++) {    
 	console.log(i);
 	console.log(nodes[i]);
 	var hosp = nodes[i].getAttribute("hosp");
