@@ -25,14 +25,10 @@ level: 第三級
 <div id="charts">
 	{% for hospital in site.HAhospital %}
 	{% if hospital.with_AE_service_eng == true %}
-		<div id="chart" hosp="{{ hospital.abbrev }}"></div>
+		<div name="chart-container" hosp="{{ hospital.abbrev }}" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
 	{% endif %}
 	{% endfor %}
 </div>
-<div id="hidden-charts" style="display: none;">
-	<div id="chart-container" style="position: relative; height:200px;"><canvas id="chart" height="300" width="600"></canvas></div>
-</div>
-  
 <script>  
 function createMatrix(N, M) {
     var matrix = new Array(N); // Array with initial size of N, not fixed!
@@ -46,8 +42,6 @@ function createMatrix(N, M) {
 
 var labels = [];
 var dataMap = [];
-
-var ctx = document.getElementById("chart").getContext("2d");
 var charts = [];
 
 
@@ -89,13 +83,10 @@ function updateChart() {
     console.log(dataMap);
     console.log(labels);
     
-    for (var hosp in dataMap) {
+    for (var itm in document.getElementsByName("chart-container")) {
 
-        var itm = document.getElementById("chart-container");
-        var clone = itm.cloneNode(true);
-        clone.id = "clone";
-        var newClone = document.getElementById("charts").appendChild(clone);
-        var chart = new Chart(newClone.firstChild.getContext("2d"), {
+        var hosp = itm.getAttribute("hosp");
+        var chart = new Chart(itm.firstChild.getContext("2d"), {
             type: 'bar',
             options: {
                 responsive: true,
