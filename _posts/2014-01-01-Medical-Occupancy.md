@@ -25,32 +25,32 @@ level: 第一級
 
   // completely arbitrary data
   var data = {{ site.data.MEDOCCUPANCY | jsonify }};
-  var matrixData = {};
+  var matrixData = {
+    labels: [],
+    datasets: []
+  };
   
   for (var i in data){
     if (i == 0){
       var labels = data[i];
       labels.splice(0,1);
-      matrixData.labels = labels;
-      matrixData.datasets = [];
+      for (var j in labels)
+        matrixData.datasets[j].label = labels[j];
+        matrixData.datasets[j].data = [];
     }else{
-      var occupancies = data[data.length-i]; // invert order
-      var label = occupancies.splice(0,1);
-      for (var j in occupancies){
-        occupancies[j] = parseInt(occupancies[j].match(/([0-9]*)/g)[0]);
-        if (!occupancies[j])
-          occupancies[j] = 0;
+      matrixData.labels.push(data[i][0]);
+      for (var j in data[i]){
+        if (j==0)
+          continue;
+        matrixData.datasets[j-1].data[i-1] = parseInt(data[i][j].match(/([0-9]*)/g)[0]);
+        if (!matrixData.datasets[j-1].data[i-1])
+          matrixData.datasets[j-1].data[i-1] = 0;
       }
-      matrixData.datasets.push({
-        label: label,
-        data: occupancies
-      })
-      console.log(occupancies);
     }
-      
       if (i > 60) // too many entries already
         break;  //abort
   }
+  console.log(matrixData);
 
   var sampleChart = new Chart(ctx('container')).HeatMap(matrixData, {
     responsive: false,
