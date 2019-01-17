@@ -54,7 +54,10 @@ level: 第一級
 
   var sampleChart = new Chart(ctx('container')).HeatMap(matrixData, {
     responsive: false,
-      labelScale: 0.6,
-      rounded: false
+    labelScale: 0.6,
+    rounded: false,
+    scales: {
+      xAxes:[{ position: 'top' }]
+    }
   });
 </script>
