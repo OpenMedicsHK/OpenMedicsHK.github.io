@@ -8,37 +8,37 @@
   "start_url": "/",
   "icons": [
     {
-     "src": "assets/android36x36.png",
+     "src": "assets/sdpi-icon.png",
      "sizes": "36x36",
      "type": "image\/png",
      "density": "0.75"
     },
     {
-     "src": "assets/android48x48.png",
+     "src": "assets/mdpi-icon.png",
      "sizes": "48x48",
      "type": "image\/png",
      "density": "1.0"
     },
     {
-     "src": "assets/android72x72.png",
+     "src": "assets/hdpi-icon.png",
      "sizes": "72x72",
      "type": "image\/png",
      "density": "1.5"
     },
     {
-     "src": "assets/android96x96.png",
+     "src": "assets/xhdpi-icon.png",
      "sizes": "96x96",
      "type": "image\/png",
      "density": "2.0"
     },
     {
-     "src": "assets/android144x144.png",
+     "src": "assets/xxhdpi-icon.png",
      "sizes": "144x144",
      "type": "image\/png",
      "density": "3.0"
     },
     {
-     "src": "assets/android192x192.png",
+     "src": "assets/xxxhdpi-icon.png",
      "sizes": "192x192",
      "type": "image\/png",
      "density": "4.0"
