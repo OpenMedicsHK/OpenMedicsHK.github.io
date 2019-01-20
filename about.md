@@ -62,9 +62,9 @@ permalink: /about/
 ### 鳴謝
 * 技術支援
     * 網站架設 [Github Pages](https://pages.github.com/)
-    * 圖表API [High Charts](https://www.highcharts.com/) [ChartJS](https://www.chartjs.org/)
+    * 圖表實現 [High Charts](https://www.highcharts.com/) [ChartJS](https://www.chartjs.org/) [MomentJS](https://momentjs.com/)
     * 網站後台 [Google Drive](https://drive.google.com/drive) [Google Script](https://www.google.com/script/start/) [Google BigQuery](https://cloud.google.com/bigquery/) 
 * 網站設計
     * JEKYLL 藍本 [chesterhow/tale](https://github.com/chesterhow/tale)
-    * 網站設計 [HTML5 UP](https://html5up.net/)
+    * 外觀設計 [HTML5 UP](https://html5up.net/)
     * 字型設計 [Adobe／Google Source Serif](https://typekit.com/)
