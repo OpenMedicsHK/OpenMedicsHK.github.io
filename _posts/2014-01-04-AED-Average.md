@@ -74,10 +74,9 @@ function loadLIVEDATA(data) {
 function updateChart() {
     var data = {{ site.data.AEDLOG | jsonify }};
     $.each( data, function( i , val ) {
-      if (parseInt(val.DOW) != moment().day())
-        return;
-      if (parseInt(val.DOW) == 7 && moment().day() != 0)
-        return;
+      if (parseInt(val.DOW) != 7 && moment().day() != 0)
+      	if (parseInt(val.DOW) != moment().day())
+        	return;
       labels.push(moment(val.HOD, 'H', 'en'));
       $.each( val, function( j , val2 ) {
 	if (j == 'HOD' || j == 'DOW'){
