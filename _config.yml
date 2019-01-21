@@ -25,7 +25,7 @@ permalink:      /data/:title/
 collections:
   HAhospital:
     output: true
-    permalink: /HAHospital/:path/
+    permalink: /HAHospital/:title/
 
 # Layouts
 defaults:
